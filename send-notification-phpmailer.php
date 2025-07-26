@@ -61,7 +61,7 @@ try {
     $mail->Host       = 'srv142.niagahoster.com';
     $mail->SMTPAuth   = true;
     $mail->Username   = 'admin@pejuangumroh.id';
-    $mail->Password   = 'YOUR_EMAIL_PASSWORD_HERE'; // Ganti dengan password email Anda
+    $mail->Password   = 'peeweegaskins'; // Ganti dengan password email Anda yang sebenarnya
     
     // Try different encryption methods
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS; // SSL on port 465

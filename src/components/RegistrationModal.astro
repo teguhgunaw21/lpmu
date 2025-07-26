@@ -217,15 +217,12 @@
 			});
 		}
 
-		// Track InitiateCheckout event for form submit button
-		const formSubmitButton = document.getElementById('formSubmitButton');
-		if (formSubmitButton) {
-			formSubmitButton.addEventListener('click', function(event) {
-				// Prevent event bubbling to avoid conflicts
-				event.preventDefault();
-				event.stopPropagation();
+		// Handle form submission with API integration
+		if (registrationForm) {
+			registrationForm.addEventListener('submit', function(e) {
+				e.preventDefault();
 				
-				// Track InitiateCheckout event when "Kirim Sekarang" button is clicked
+				// Track InitiateCheckout event when form is submitted
 				if (typeof (window as any).fbq !== 'undefined') {
 					(window as any).fbq('track', 'InitiateCheckout', {
 						content_name: 'Form Registration Submission',
@@ -233,20 +230,8 @@
 						value: 0.00,
 						currency: 'IDR'
 					});
-					console.log('Meta Pixel: InitiateCheckout event tracked - "Kirim Sekarang" button clicked');
+					console.log('Meta Pixel: InitiateCheckout event tracked - Form submission');
 				}
-				
-				// Manually trigger form submission after tracking
-				if (registrationForm) {
-					registrationForm.dispatchEvent(new Event('submit'));
-				}
-			});
-		}
-
-		// Handle form submission with API integration
-		if (registrationForm) {
-			registrationForm.addEventListener('submit', function(e) {
-				e.preventDefault();
 				
 				// Collect form data
 				const formData = new FormData(registrationForm);
