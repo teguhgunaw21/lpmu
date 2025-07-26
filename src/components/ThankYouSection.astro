@@ -107,6 +107,17 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
+	// Track Purchase event when thank you page loads
+	if (typeof (window as any).fbq !== 'undefined') {
+		(window as any).fbq('track', 'Purchase', {
+			content_name: 'Webinar Digital Marketing for Umroh',
+			content_category: 'Education',
+			value: 0.00,
+			currency: 'IDR'
+		});
+		console.log('Meta Pixel: Purchase event tracked on thank-you page');
+	}
+	
 	// Get registration data from localStorage
 	const registrationDataString = localStorage.getItem('registrationData');
 	const dataDisplay = document.getElementById('dataDisplay');
@@ -153,6 +164,15 @@ document.addEventListener('DOMContentLoaded', function() {
 			// Setup WhatsApp button
 			if (whatsappButton) {
 				whatsappButton.addEventListener('click', function() {
+					// Track Contact event when WhatsApp button is clicked
+					if (typeof (window as any).fbq !== 'undefined') {
+						(window as any).fbq('track', 'Contact', {
+							content_name: 'WhatsApp Confirmation',
+							content_category: 'Contact'
+						});
+						console.log('Meta Pixel: Contact event tracked - WhatsApp confirmation');
+					}
+					
 					// Create WhatsApp message
 					const message = `Assalamualaikum warahmatullahi wabarakatuh Izin Mas Awan, Saya sudah Mendaftar MENTORING DIGITAL MARKETING FOR UMROH! dengan Data sebagai berikut :
 

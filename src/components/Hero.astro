@@ -205,7 +205,7 @@
 
 		<!-- Navigation Button -->
 		<div class="text-center animate-fadeInUp delay-500">
-			<a href="#problem" class="group inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-bold text-white bg-gradient-to-r from-emerald-600 to-emerald-700 rounded-xl hover:from-emerald-700 hover:to-emerald-800 focus:outline-none focus:ring-4 focus:ring-emerald-300 transition-all duration-300 shadow-lg hover:shadow-emerald-500/25 hover:-translate-y-1 transform">
+			<a href="#problem" class="hero-nav-button group inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-bold text-white bg-gradient-to-r from-emerald-600 to-emerald-700 rounded-xl hover:from-emerald-700 hover:to-emerald-800 focus:outline-none focus:ring-4 focus:ring-emerald-300 transition-all duration-300 shadow-lg hover:shadow-emerald-500/25 hover:-translate-y-1 transform">
 				<svg class="w-5 h-5 sm:w-6 sm:h-6 mr-2 sm:mr-3 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"/>
 				</svg>
@@ -234,4 +234,22 @@
 	<div class="absolute top-1/2 left-8 opacity-10">
 		<div class="w-16 h-16 border border-white/30 rounded-full"></div>
 	</div>
-</section> 
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+	// Track AddToCart event for Hero navigation button
+	const heroNavButton = document.querySelector('.hero-nav-button');
+	if (heroNavButton) {
+		heroNavButton.addEventListener('click', function() {
+			if (typeof (window as any).fbq !== 'undefined') {
+				(window as any).fbq('track', 'AddToCart', {
+					content_name: 'CEK MASALAH YANG ANDA HADAPI',
+					content_category: 'Navigation Button - Hero'
+				});
+				console.log('Meta Pixel: AddToCart event tracked - Hero navigation button');
+			}
+		});
+	}
+});
+</script> 
