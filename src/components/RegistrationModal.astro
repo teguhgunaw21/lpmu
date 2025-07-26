@@ -140,6 +140,7 @@
 				<div class="pt-4">
 					<button 
 						type="submit"
+						id="formSubmitButton"
 						class="form-submit-button w-full bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700 text-white font-bold py-4 px-6 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 focus:outline-none focus:ring-4 focus:ring-emerald-300"
 					>
 						<svg class="w-5 h-5 inline mr-2" fill="currentColor" viewBox="0 0 24 24">
@@ -216,12 +217,11 @@
 			});
 		}
 
-		// Handle form submission with API integration
-		if (registrationForm) {
-			registrationForm.addEventListener('submit', function(e) {
-				e.preventDefault();
-				
-				// Track StartPayment event when form is submitted
+		// Track StartPayment event for form submit button
+		const formSubmitButton = document.getElementById('formSubmitButton');
+		if (formSubmitButton) {
+			formSubmitButton.addEventListener('click', function() {
+				// Track StartPayment event when "Kirim Sekarang" button is clicked
 				if (typeof (window as any).fbq !== 'undefined') {
 					(window as any).fbq('track', 'StartPayment', {
 						content_name: 'Form Registration Submission',
@@ -229,8 +229,15 @@
 						value: 0.00,
 						currency: 'IDR'
 					});
-					console.log('Meta Pixel: StartPayment event tracked - Form submission');
+					console.log('Meta Pixel: StartPayment event tracked - "Kirim Sekarang" button clicked');
 				}
+			});
+		}
+
+		// Handle form submission with API integration
+		if (registrationForm) {
+			registrationForm.addEventListener('submit', function(e) {
+				e.preventDefault();
 				
 				// Collect form data
 				const formData = new FormData(registrationForm);
