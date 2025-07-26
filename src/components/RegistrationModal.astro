@@ -368,20 +368,37 @@
 						waktu_daftar: new Date().toLocaleString('id-ID')
 					};
 
-					// Send email notification via PHPMailer (WORKING!)
-					fetch('https://srv142.niagahoster.com/~smknreng/send-notification-phpmailer.php', {
+					// Send email notification via Vercel Serverless Function (PHP equivalent!)
+					fetch('/api/send-email', {
 						method: 'POST',
 						headers: {
-							'Content-Type': 'application/x-www-form-urlencoded',
+							'Content-Type': 'application/json',
 						},
-						body: new URLSearchParams(emailData).toString()
+						body: JSON.stringify({
+							to_email: 'teguhgunawan21@gmail.com',
+							from_name: namaCustomer,
+							from_email: email,
+							subject: 'PENDAFTARAN WEBINAR MENTORING UMROH - ' + namaCustomer,
+							nama: namaCustomer,
+							whatsapp: noWa,
+							email: email,
+							sapaan: panggilan,
+							asal_kota: alamat,
+							status: pekerjaan,
+							agent_id: agentId,
+							waktu_daftar: new Date().toLocaleString('id-ID')
+						})
 					})
-					.then(response => response.text())
+					.then(response => response.json())
 					.then(data => {
-						console.log('✅ Email notification sent:', data);
+						if (data.success) {
+							console.log('✅ Email notification sent via Vercel API:', data.message);
+						} else {
+							throw new Error(data.error || 'Unknown error');
+						}
 					})
 					.catch(error => {
-						console.error('⚠️ Email service error:', error);
+						console.error('⚠️ Vercel API email error:', error);
 						
 						// Backup: Open mailto as fallback
 						const mailtoSubject = encodeURIComponent('PENDAFTARAN WEBINAR MENTORING UMROH - ' + namaCustomer);
