@@ -200,6 +200,12 @@
 			openModalButton.addEventListener('click', function(e) {
 				e.preventDefault();
 				openModal();
+				
+				// Meta Pixel: Track InitiateCheckout when main registration button is clicked
+				if (typeof window !== 'undefined' && (window as any).fbq) {
+					(window as any).fbq('track', 'InitiateCheckout');
+					console.log('Meta Pixel: InitiateCheckout event tracked');
+				}
 			});
 		}
 

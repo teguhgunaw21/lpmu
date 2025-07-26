@@ -19,9 +19,33 @@ import '../styles/global.css'
 		<!-- Meta Tags -->
 		<meta name="description" content="Bergabung dengan 3.940+ orang dalam program mentoring digital marketing untuk jualan produk Umroh. Gratis dan dibimbing langsung!">
 		<meta name="keywords" content="mentoring umroh, digital marketing, facebook ads, instagram ads, agen umroh, income tambahan">
+		
+
 	</head>
 	<body class="font-inter text-gray-900 antialiased">
 		<slot />
+		
+		<!-- Meta Pixel Code -->
+		<script is:inline>
+		!function(f,b,e,v,n,t,s)
+		{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+		n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+		if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+		n.queue=[];t=b.createElement(e);t.async=!0;
+		t.src=v;s=b.getElementsByTagName(e)[0];
+		s.parentNode.insertBefore(t,s)}(window, document,'script',
+		'https://connect.facebook.net/en_US/fbevents.js');
+		
+		// Initialize Meta Pixel with ID: 976829807128778
+		fbq('init', '976829807128778');
+		
+		// Track PageView event on all pages
+		fbq('track', 'PageView');
+		</script>
+		<noscript><img height="1" width="1" style="display:none"
+		src="https://www.facebook.com/tr?id=976829807128778&ev=PageView&noscript=1"
+		/></noscript>
+		<!-- End Meta Pixel Code -->
 	</body>
 </html>
 
