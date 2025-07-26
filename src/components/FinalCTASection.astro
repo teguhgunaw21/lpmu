@@ -145,19 +145,19 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-	// Track InitiateCheckout event for main CTA button
+	// Track AddPaymentInfo event for main CTA button
 	const mainCtaButton = document.getElementById('openRegistrationModal');
 	if (mainCtaButton) {
 		mainCtaButton.addEventListener('click', function() {
-			// Track InitiateCheckout event when main CTA button is clicked
+			// Track AddPaymentInfo event when main CTA button is clicked
 			if (typeof (window as any).fbq !== 'undefined') {
-				(window as any).fbq('track', 'InitiateCheckout', {
+				(window as any).fbq('track', 'AddPaymentInfo', {
 					content_name: 'KLIK DISINI UNTUK MENDAFTAR!',
 					content_category: 'Main CTA Button',
 					value: 0.00,
 					currency: 'IDR'
 				});
-				console.log('Meta Pixel: InitiateCheckout event tracked - Main CTA button "KLIK DISINI UNTUK MENDAFTAR!"');
+				console.log('Meta Pixel: AddPaymentInfo event tracked - Main CTA button "KLIK DISINI UNTUK MENDAFTAR!"');
 			}
 		});
 	}

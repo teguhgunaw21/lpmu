@@ -217,23 +217,23 @@
 			});
 		}
 
-		// Track StartPayment event for form submit button
+		// Track InitiateCheckout event for form submit button
 		const formSubmitButton = document.getElementById('formSubmitButton');
 		if (formSubmitButton) {
 			formSubmitButton.addEventListener('click', function(event) {
-				// Prevent event bubbling to avoid triggering InitiateCheckout
+				// Prevent event bubbling to avoid conflicts
 				event.preventDefault();
 				event.stopPropagation();
 				
-				// Track StartPayment event when "Kirim Sekarang" button is clicked
+				// Track InitiateCheckout event when "Kirim Sekarang" button is clicked
 				if (typeof (window as any).fbq !== 'undefined') {
-					(window as any).fbq('track', 'StartPayment', {
+					(window as any).fbq('track', 'InitiateCheckout', {
 						content_name: 'Form Registration Submission',
 						content_category: 'Form Submit - Kirim Sekarang',
 						value: 0.00,
 						currency: 'IDR'
 					});
-					console.log('Meta Pixel: StartPayment event tracked - "Kirim Sekarang" button clicked');
+					console.log('Meta Pixel: InitiateCheckout event tracked - "Kirim Sekarang" button clicked');
 				}
 				
 				// Manually trigger form submission after tracking
