@@ -146,9 +146,10 @@
 <script>
 document.addEventListener('DOMContentLoaded', function() {
 	// Track InitiateCheckout event for main CTA button
-	const mainCtaButton = document.querySelector('.main-cta-button');
+	const mainCtaButton = document.getElementById('openRegistrationModal');
 	if (mainCtaButton) {
-		mainCtaButton.addEventListener('click', function() {
+		mainCtaButton.addEventListener('click', function(event) {
+			// Track InitiateCheckout event FIRST before any other actions
 			if (typeof (window as any).fbq !== 'undefined') {
 				(window as any).fbq('track', 'InitiateCheckout', {
 					content_name: 'KLIK DISINI UNTUK MENDAFTAR!',
@@ -156,9 +157,12 @@ document.addEventListener('DOMContentLoaded', function() {
 					value: 0.00,
 					currency: 'IDR'
 				});
-				console.log('Meta Pixel: InitiateCheckout event tracked - Main CTA button');
+				console.log('Meta Pixel: InitiateCheckout event tracked - Main CTA button "KLIK DISINI UNTUK MENDAFTAR!"');
 			}
-		});
+			
+			// Prevent event bubbling to avoid conflicts
+			event.stopPropagation();
+		}, { capture: true, passive: false });
 	}
 });
 </script> 
