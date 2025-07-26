@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Astro API Endpoint</title>
+</head>
+<body>
+    <h1>Test Email API</h1>
+    <button onclick="testEmailAPI()">Test Send Email</button>
+    <div id="result"></div>
+
+    <script>
+        async function testEmailAPI() {
+            const resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = 'Sending email...';
+
+            try {
+                const response = await fetch('/api/send-email', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        nama: 'Test User API',
+                        whatsapp: '628123456789',
+                        email: 'test@example.com',
+                        sapaan: 'Mas',
+                        asal_kota: 'Jakarta Test',
+                        status: 'API Tester',
+                        agent_id: 'test-api-123',
+                        to_email: 'teguhgunawan21@gmail.com',
+                        subject: 'TEST API ENDPOINT - Astro'
+                    })
+                });
+
+                const data = await response.json();
+                
+                if (data.success) {
+                    resultDiv.innerHTML = `
+                        <h3 style="color: green;">✅ SUCCESS!</h3>
+                        <p><strong>Message:</strong> ${data.message}</p>
+                        <p><strong>Message ID:</strong> ${data.messageId}</p>
+                        <p><strong>To:</strong> ${data.to}</p>
+                        <p><strong>Method:</strong> ${data.method}</p>
+                    `;
+                } else {
+                    resultDiv.innerHTML = `
+                        <h3 style="color: red;">❌ ERROR!</h3>
+                        <p><strong>Error:</strong> ${data.error}</p>
+                        <p><strong>Method:</strong> ${data.method}</p>
+                    `;
+                }
+            } catch (error) {
+                resultDiv.innerHTML = `
+                    <h3 style="color: red;">❌ FETCH ERROR!</h3>
+                    <p><strong>Error:</strong> ${error.message}</p>
+                    <p>Check browser console for details.</p>
+                `;
+                console.error('Fetch error:', error);
+            }
+        }
+    </script>
+</body>
+</html> 

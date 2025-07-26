@@ -368,69 +368,8 @@
 						waktu_daftar: new Date().toLocaleString('id-ID')
 					};
 
-					// Send email notification via Vercel Serverless Function (PHP equivalent!)
-					fetch('/api/send-email', {
-						method: 'POST',
-						headers: {
-							'Content-Type': 'application/json',
-						},
-						body: JSON.stringify({
-							to_email: 'teguhgunawan21@gmail.com',
-							from_name: namaCustomer,
-							from_email: email,
-							subject: 'PENDAFTARAN WEBINAR MENTORING UMROH - ' + namaCustomer,
-							nama: namaCustomer,
-							whatsapp: noWa,
-							email: email,
-							sapaan: panggilan,
-							asal_kota: alamat,
-							status: pekerjaan,
-							agent_id: agentId,
-							waktu_daftar: new Date().toLocaleString('id-ID')
-						})
-					})
-					.then(response => response.json())
-					.then(data => {
-						if (data.success) {
-							console.log('✅ Email notification sent via Vercel API:', data.message);
-						} else {
-							throw new Error(data.error || 'Unknown error');
-						}
-					})
-					.catch(error => {
-						console.error('⚠️ Vercel API email error:', error);
-						
-						// Backup: Open mailto as fallback
-						const mailtoSubject = encodeURIComponent('PENDAFTARAN WEBINAR MENTORING UMROH - ' + namaCustomer);
-						const mailtoBody = encodeURIComponent(`
-PENDAFTARAN WEBINAR BARU!
-
-Detail Pendaftar:
-====================
-Nama: ${namaCustomer}
-WhatsApp: ${noWa}
-Email: ${email}
-Sapaan: ${panggilan}
-Asal Kota: ${alamat}
-Status: ${pekerjaan}
-
-Agent ID: ${agentId}
-Produk Terdaftar: 10 produk umroh
-
-Waktu Daftar: ${new Date().toLocaleString('id-ID')}
-
-Terima kasih!
-						`.trim());
-						
-						const mailtoLink = `mailto:teguhgunawan21@gmail.com?subject=${mailtoSubject}&body=${mailtoBody}`;
-						
-						// Open mailto in new tab (won't interrupt user flow)
-						setTimeout(() => {
-							window.open(mailtoLink, '_blank');
-						}, 1000);
-						
-						console.log('📧 Mailto backup triggered');
-					});
+					// No email/WhatsApp notifications - form data will be saved to databases only
+					console.log('✅ Form data processed - no notifications sent (by user request)');
 
 					// Send all products to Member Area
 					const allProduk = [
