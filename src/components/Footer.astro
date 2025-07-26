@@ -169,7 +169,7 @@
 				<div class="mt-8">
 					<a 
 						href="#final-cta"
-						class="inline-flex items-center justify-center px-6 py-3 text-base font-bold text-slate-900 bg-gradient-to-r from-emerald-400 to-emerald-500 rounded-xl hover:from-emerald-500 hover:to-emerald-600 focus:outline-none focus:ring-4 focus:ring-emerald-300 transition-all duration-300 shadow-lg hover:shadow-emerald-500/25 hover:-translate-y-1 transform"
+						class="footer-cta-button inline-flex items-center justify-center px-6 py-3 text-base font-bold text-slate-900 bg-gradient-to-r from-emerald-400 to-emerald-500 rounded-xl hover:from-emerald-500 hover:to-emerald-600 focus:outline-none focus:ring-4 focus:ring-emerald-300 transition-all duration-300 shadow-lg hover:shadow-emerald-500/25 hover:-translate-y-1 transform"
 					>
 						<svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
@@ -231,4 +231,22 @@
 	<div class="absolute top-1/2 right-8 opacity-20">
 		<div class="w-16 h-16 border border-emerald-400/30 rounded-full animate-pulse delay-2000"></div>
 	</div>
-</footer> 
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+	// Track AddToCart event for Footer CTA button
+	const footerCtaButton = document.querySelector('.footer-cta-button');
+	if (footerCtaButton) {
+		footerCtaButton.addEventListener('click', function() {
+			if (typeof (window as any).fbq !== 'undefined') {
+				(window as any).fbq('track', 'AddToCart', {
+					content_name: 'DAFTAR GRATIS',
+					content_category: 'Footer CTA Button'
+				});
+				console.log('Meta Pixel: AddToCart event tracked - Footer CTA button');
+			}
+		});
+	}
+});
+</script> 
