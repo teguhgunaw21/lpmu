@@ -1,0 +1,193 @@
+---
+// Navbar.astro - Professional navbar for Mentoring Umroh
+---
+
+<nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-lg border-b border-slate-200/50 shadow-sm">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16 sm:h-20">
+      
+      <!-- Logo/Brand -->
+      <div class="flex items-center">
+        <div class="flex-shrink-0">
+          <a href="#" class="flex items-center space-x-3">
+            <!-- Logo Image -->
+            <img src="public/logo.png" alt="Umroh Logo" class="h-8 w-auto">
+          </a>
+        </div>
+      </div>
+
+      <!-- Desktop Navigation -->
+      <div class="hidden md:block">
+        <div class="ml-10 flex items-baseline space-x-8">
+          <a href="#hero" class="text-slate-700 hover:text-emerald-600 px-3 py-2 text-sm font-medium transition-colors duration-200 smooth-scroll">
+            Beranda
+          </a>
+          <a href="#problem" class="text-slate-700 hover:text-emerald-600 px-3 py-2 text-sm font-medium transition-colors duration-200 smooth-scroll">
+            Masalah
+          </a>
+          <a href="#material" class="text-slate-700 hover:text-emerald-600 px-3 py-2 text-sm font-medium transition-colors duration-200 smooth-scroll">
+            Materi
+          </a>
+          <a href="#testimoni" class="text-slate-700 hover:text-emerald-600 px-3 py-2 text-sm font-medium transition-colors duration-200 smooth-scroll">
+            Testimoni
+          </a>
+          <a href="#faq" class="text-slate-700 hover:text-emerald-600 px-3 py-2 text-sm font-medium transition-colors duration-200 smooth-scroll">
+            FAQ
+          </a>
+        </div>
+      </div>
+
+      <!-- CTA Button & Mobile Menu -->
+      <div class="flex items-center space-x-4">
+        <!-- Desktop CTA Button -->
+        <div class="hidden sm:block">
+          <a 
+            href="#final-cta"
+            class="inline-flex items-center px-4 py-2 text-sm font-semibold text-white bg-gradient-to-r from-emerald-500 to-emerald-600 rounded-lg hover:from-emerald-600 hover:to-emerald-700 focus:outline-none focus:ring-2 focus:ring-emerald-300 transition-all duration-200 shadow-md hover:shadow-lg hover:-translate-y-0.5"
+          >
+            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+            </svg>
+            Daftar Gratis
+          </a>
+        </div>
+
+        <!-- Mobile menu button -->
+        <div class="md:hidden">
+          <button 
+            type="button" 
+            class="mobile-menu-button inline-flex items-center justify-center p-2 rounded-lg text-slate-600 hover:text-emerald-600 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-emerald-300 transition-colors duration-200"
+            aria-controls="mobile-menu" 
+            aria-expanded="false"
+          >
+            <span class="sr-only">Open main menu</span>
+            <!-- Hamburger icon -->
+            <svg class="hamburger-icon block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+            <!-- Close icon (hidden by default) -->
+            <svg class="close-icon hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile menu (hidden by default) -->
+  <div class="mobile-menu hidden md:hidden">
+    <div class="px-2 pt-2 pb-3 space-y-1 bg-white border-t border-slate-200">
+      <a href="#hero" class="text-slate-700 hover:text-emerald-600 hover:bg-slate-50 block px-3 py-2 text-base font-medium rounded-lg transition-colors duration-200 smooth-scroll">
+        Beranda
+      </a>
+      <a href="#problem" class="text-slate-700 hover:text-emerald-600 hover:bg-slate-50 block px-3 py-2 text-base font-medium rounded-lg transition-colors duration-200 smooth-scroll">
+        Masalah
+      </a>
+      <a href="#material" class="text-slate-700 hover:text-emerald-600 hover:bg-slate-50 block px-3 py-2 text-base font-medium rounded-lg transition-colors duration-200 smooth-scroll">
+        Materi
+      </a>
+      <a href="#testimoni" class="text-slate-700 hover:text-emerald-600 hover:bg-slate-50 block px-3 py-2 text-base font-medium rounded-lg transition-colors duration-200 smooth-scroll">
+        Testimoni
+      </a>
+      <a href="#faq" class="text-slate-700 hover:text-emerald-600 hover:bg-slate-50 block px-3 py-2 text-base font-medium rounded-lg transition-colors duration-200 smooth-scroll">
+        FAQ
+      </a>
+      
+      <!-- Mobile CTA Button -->
+      <div class="pt-4 pb-2">
+        <a 
+          href="#final-cta"
+          class="w-full inline-flex items-center justify-center px-4 py-3 text-base font-semibold text-white bg-gradient-to-r from-emerald-500 to-emerald-600 rounded-lg hover:from-emerald-600 hover:to-emerald-700 focus:outline-none focus:ring-2 focus:ring-emerald-300 transition-all duration-200 shadow-md"
+        >
+          <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+          </svg>
+          Daftar Gratis Sekarang
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<script>
+  // Mobile menu toggle functionality
+  document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuButton = document.querySelector('.mobile-menu-button');
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const hamburgerIcon = document.querySelector('.hamburger-icon');
+    const closeIcon = document.querySelector('.close-icon');
+
+    if (mobileMenuButton && mobileMenu) {
+      mobileMenuButton.addEventListener('click', function() {
+        const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
+        
+        // Toggle menu visibility
+        mobileMenu.classList.toggle('hidden');
+        
+        // Toggle icons
+        hamburgerIcon?.classList.toggle('hidden');
+        closeIcon?.classList.toggle('hidden');
+        
+        // Update aria-expanded
+        mobileMenuButton.setAttribute('aria-expanded', String(!isExpanded));
+      });
+    }
+
+    // Close mobile menu when clicking on links
+    const mobileMenuLinks = document.querySelectorAll('.mobile-menu a');
+    mobileMenuLinks.forEach(link => {
+      link.addEventListener('click', function() {
+        mobileMenu?.classList.add('hidden');
+        hamburgerIcon?.classList.remove('hidden');
+        closeIcon?.classList.add('hidden');
+        mobileMenuButton?.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    // Smooth scrolling for all navigation links
+    const smoothScrollLinks = document.querySelectorAll('.smooth-scroll');
+    smoothScrollLinks.forEach(link => {
+      link.addEventListener('click', (e: Event) => {
+        e.preventDefault();
+        const anchorLink = link as HTMLAnchorElement;
+        const targetId = anchorLink.getAttribute('href')?.substring(1);
+        const targetElement = document.getElementById(targetId || '');
+        
+        if (targetElement) {
+          const navbarHeight = 80; // Account for fixed navbar height
+          const targetPosition = targetElement.offsetTop - navbarHeight;
+          
+          window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+  });
+</script>
+
+<style>
+  /* Ensure navbar stays above everything */
+  nav {
+    backdrop-filter: blur(12px);
+  }
+  
+  /* Smooth transitions for mobile menu */
+  .mobile-menu {
+    transition: all 0.3s ease-in-out;
+  }
+
+  /* Smooth scrolling fallback */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Active navigation link styling */
+  .smooth-scroll:hover {
+    color: #059669;
+    transform: translateY(-1px);
+    transition: all 0.2s ease-in-out;
+  }
+</style> 

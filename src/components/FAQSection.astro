@@ -1,0 +1,182 @@
+---
+// FAQSection.astro - FAQ section with accordion functionality for Mentoring Umroh
+---
+
+<section id="faq" class="bg-gradient-to-br from-white via-emerald-50 to-slate-50 py-16 sm:py-20 relative overflow-hidden">
+	<!-- Background Pattern -->
+	<div class="absolute inset-0 opacity-5">
+		<div class="absolute inset-0" style="background-image: radial-gradient(circle at 25% 25%, rgba(16, 185, 129, 0.1) 2px, transparent 2px), radial-gradient(circle at 75% 75%, rgba(148, 163, 184, 0.1) 2px, transparent 2px); background-size: 50px 50px, 70px 70px;"></div>
+	</div>
+
+	<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+		
+		<!-- Section Header -->
+		<div class="text-center mb-16">
+			<h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-800 mb-6 animate-fadeInUp leading-tight">
+				Hal Yang <span class="text-emerald-600">Sering Ditanyakan</span>
+			</h2>
+			<div class="w-24 h-1 bg-gradient-to-r from-emerald-400 to-emerald-600 mx-auto rounded-full"></div>
+		</div>
+
+		<!-- FAQ Grid -->
+		<div class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
+			
+			<!-- FAQ 1 -->
+			<div class="faq-item bg-white rounded-xl shadow-lg border border-emerald-100 animate-fadeInUp delay-100 p-4 sm:p-6">
+				<div class="flex items-start space-x-3 mb-4">
+					<div class="flex-shrink-0">
+						<div class="w-10 h-10 bg-gradient-to-r from-emerald-500 to-emerald-600 rounded-full flex items-center justify-center text-xl">
+							🤔
+						</div>
+					</div>
+					<div class="flex-1">
+						<h3 class="text-lg sm:text-xl font-bold text-slate-800 mb-3">
+							Saya Mau Daftar, Gimana Caranya ?
+						</h3>
+						<p class="text-base sm:text-lg text-slate-700 leading-relaxed mb-4">
+							Silahkan klik tombol <span class="font-bold text-emerald-600">Daftar Sekarang</span> yang ada di halaman ini, maka Anda akan diarahkan ke form pendaftaran.
+						</p>
+						<a 
+							href="#final-cta"
+							class="inline-flex items-center px-6 py-3 text-base font-semibold text-white bg-gradient-to-r from-emerald-500 to-emerald-600 rounded-xl hover:from-emerald-600 hover:to-emerald-700 focus:outline-none focus:ring-2 focus:ring-emerald-300 transition-all duration-200 shadow-md hover:shadow-lg hover:-translate-y-1"
+						>
+							<svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+							</svg>
+							DAFTAR DISINI
+						</a>
+					</div>
+				</div>
+			</div>
+
+			<!-- FAQ 2 -->
+			<div class="faq-item bg-white rounded-xl shadow-lg border border-emerald-100 animate-fadeInUp delay-200 p-4 sm:p-6">
+				<div class="flex items-start space-x-3">
+					<div class="flex-shrink-0">
+						<div class="w-10 h-10 bg-gradient-to-r from-emerald-500 to-emerald-600 rounded-full flex items-center justify-center text-xl">
+							📱
+						</div>
+					</div>
+					<div class="flex-1">
+						<h3 class="text-lg sm:text-xl font-bold text-slate-800 mb-3">
+							Apakah bisa ikut webinar meskipun saya pakai HP ?
+						</h3>
+						<p class="text-base sm:text-lg text-slate-700 leading-relaxed">
+							<span class="font-bold text-emerald-600">Ya Tentu, Sangat Bisa!</span> Meskipun hanya pakai HP. Zoom dapat diakses dengan mudah melalui smartphone Anda. Pastikan koneksi internet stabil untuk pengalaman terbaik.
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<!-- FAQ 3 -->
+			<div class="faq-item bg-white rounded-xl shadow-lg border border-emerald-100 animate-fadeInUp delay-300 p-4 sm:p-6">
+				<div class="flex items-start space-x-3">
+					<div class="flex-shrink-0">
+						<div class="w-10 h-10 bg-gradient-to-r from-emerald-500 to-emerald-600 rounded-full flex items-center justify-center text-xl">
+							💰
+						</div>
+					</div>
+					<div class="flex-1">
+						<h3 class="text-lg sm:text-xl font-bold text-slate-800 mb-3">
+							Apakah ini Gratis ?
+						</h3>
+						<p class="text-base sm:text-lg text-slate-700 leading-relaxed">
+							Mentoring ini <span class="font-bold text-emerald-600">bersifat gratis selama 1 minggu</span> dan sangat <span class="font-semibold text-slate-800">bermanfaat untuk Anda & Keluarga.</span> Tidak ada biaya tersembunyi atau tagihan tambahan.
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<!-- FAQ 4 -->
+			<div class="faq-item bg-white rounded-xl shadow-lg border border-emerald-100 animate-fadeInUp delay-400 p-4 sm:p-6">
+				<div class="flex items-start space-x-3">
+					<div class="flex-shrink-0">
+						<div class="w-10 h-10 bg-gradient-to-r from-emerald-500 to-emerald-600 rounded-full flex items-center justify-center text-xl">
+							🕋
+						</div>
+					</div>
+					<div class="flex-1">
+						<h3 class="text-lg sm:text-xl font-bold text-slate-800 mb-3">
+							Kalau belum pernah berangkat umroh bagaimana ?
+						</h3>
+						<p class="text-base sm:text-lg text-slate-700 leading-relaxed">
+							<span class="font-bold text-emerald-600">Ya Tentu, Sangat bisa dan Sangat boleh ikut!</span> Dan semoga ikhtiar mengikuti Mentoring ini menjadikan Anda lebih dekat untuk berangkat umroh ke Tanah Suci. <span class="font-semibold text-emerald-600">Aamin Ya Allah</span> 🤲
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<!-- FAQ 5 -->
+			<div class="faq-item bg-white rounded-xl shadow-lg border border-emerald-100 animate-fadeInUp delay-500 p-4 sm:p-6">
+				<div class="flex items-start space-x-3">
+					<div class="flex-shrink-0">
+						<div class="w-10 h-10 bg-gradient-to-r from-emerald-500 to-emerald-600 rounded-full flex items-center justify-center text-xl">
+							⏰
+						</div>
+					</div>
+					<div class="flex-1">
+						<h3 class="text-lg sm:text-xl font-bold text-slate-800 mb-3">
+							Kapan webinar dilaksanakan ?
+						</h3>
+						<p class="text-base sm:text-lg text-slate-700 leading-relaxed">
+							Jadwal webinar akan diberitahukan setelah Anda <span class="font-bold text-emerald-600">berhasil mendaftar</span>. Link zoom dan informasi lengkap akan dikirim melalui WhatsApp yang Anda daftarkan.
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<!-- FAQ 6 -->
+			<div class="faq-item bg-white rounded-xl shadow-lg border border-emerald-100 animate-fadeInUp delay-600 p-4 sm:p-6">
+				<div class="flex items-start space-x-3">
+					<div class="flex-shrink-0">
+						<div class="w-10 h-10 bg-gradient-to-r from-emerald-500 to-emerald-600 rounded-full flex items-center justify-center text-xl">
+							🎓
+						</div>
+					</div>
+					<div class="flex-1">
+						<h3 class="text-lg sm:text-xl font-bold text-slate-800 mb-3">
+							Apakah akan mendapat sertifikat ?
+						</h3>
+						<p class="text-base sm:text-lg text-slate-700 leading-relaxed">
+							<span class="font-bold text-emerald-600">Ya!</span> Peserta yang mengikuti webinar sampai selesai akan mendapat <span class="font-semibold text-slate-800">sertifikat digital</span> dari Mentoring Umroh sebagai bukti keikutsertaan.
+						</p>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+		<!-- Bottom Navigation -->
+		<div class="text-center mt-16 animate-fadeInUp delay-700">
+			<div class="bg-gradient-to-r from-emerald-50 to-slate-50 rounded-2xl p-6 sm:p-8 border-2 border-emerald-200 max-w-3xl mx-auto">
+				<p class="text-xl sm:text-2xl text-slate-800 font-bold leading-relaxed mb-4">
+					Masih ada pertanyaan lain? 🤔
+				</p>
+				<p class="text-base sm:text-lg text-slate-600 leading-relaxed mb-6">
+					Jangan khawatir! Setelah daftar, Anda akan bergabung dengan grup WhatsApp khusus peserta dimana bisa bertanya langsung.
+				</p>
+				<a href="#final-cta" class="group inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white bg-gradient-to-r from-emerald-600 to-emerald-700 rounded-xl hover:from-emerald-700 hover:to-emerald-800 focus:outline-none focus:ring-4 focus:ring-emerald-300 transition-all duration-300 shadow-lg hover:shadow-emerald-500/25 hover:-translate-y-1 transform">
+					<svg class="w-6 h-6 mr-3 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+					</svg>
+					SUDAH PAHAM? DAFTAR SEKARANG!
+					<svg class="w-5 h-5 ml-3 group-hover:translate-y-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7"/>
+					</svg>
+				</a>
+			</div>
+		</div>
+
+	</div>
+
+	<!-- Subtle Decorative Elements -->
+	<div class="absolute top-20 left-10 opacity-10">
+		<div class="w-32 h-32 border-2 border-emerald-300 rounded-full"></div>
+	</div>
+	<div class="absolute bottom-20 right-10 opacity-10">
+		<div class="w-24 h-24 border-2 border-emerald-300 rounded-full"></div>
+		</div>
+</section>
+
+ 
+ 

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>🧪 Test Google Sheets Integration</title>
+    <style>
+        body { font-family: Arial; margin: 20px; background: #f5f5f5; }
+        .container { max-width: 600px; margin: 0 auto; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .test-form { border: 2px solid #ddd; padding: 20px; border-radius: 8px; margin: 20px 0; }
+        .success { background: #d4edda; border-color: #c3e6cb; color: #155724; }
+        .error { background: #f8d7da; border-color: #f5c6cb; color: #721c24; }
+        .loading { background: #fff3cd; border-color: #ffeaa7; color: #856404; }
+        input, select { width: 100%; padding: 8px; margin: 5px 0; border: 1px solid #ddd; border-radius: 4px; }
+        button { background: #007bff; color: white; padding: 12px 24px; border: none; border-radius: 6px; cursor: pointer; font-size: 16px; font-weight: bold; }
+        button:hover { background: #0056b3; }
+        button:disabled { background: #6c757d; cursor: not-allowed; }
+        .result { margin-top: 20px; padding: 15px; border-radius: 6px; }
+        pre { background: #f8f9fa; padding: 10px; border-radius: 4px; overflow-x: auto; }
+        .icon { font-size: 1.2em; margin-right: 8px; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>🧪 Test Google Sheets Integration - Mentoring Umroh</h1>
+    <p>Test apakah data form bisa masuk ke Google Sheets dengan benar.</p>
+    
+    <div class="test-form">
+        <h3>📝 Form Test Data</h3>
+        <form id="testForm">
+            <label><strong>Nama:</strong></label>
+            <input type="text" name="nama" value="Test User Google Sheets Bang" required>
+            
+            <label><strong>WhatsApp:</strong></label>
+            <input type="tel" name="whatsapp" value="6281234567890" required>
+            
+            <label><strong>Email:</strong></label>
+            <input type="email" name="email" value="test@googlesheets.com">
+            
+            <label><strong>Sapaan:</strong></label>
+            <select name="sapaan">
+                <option value="Bapak">Bapak</option>
+                <option value="Ibu">Ibu</option>
+                <option value="Mas">Mas</option>
+                <option value="Mbak">Mbak</option>
+            </select>
+            
+            <label><strong>Asal Kota:</strong></label>
+            <input type="text" name="asal_kota" value="Jakarta">
+            
+            <label><strong>Status:</strong></label>
+            <input type="text" name="status" value="Pemula Ingin Belajar Jualan Umroh">
+            
+            <br><br>
+            <button type="submit" id="submitBtn">
+                <span class="icon">🚀</span>
+                KIRIM KE GOOGLE SHEETS
+            </button>
+        </form>
+    </div>
+    
+    <div id="result"></div>
+    
+    <div style="margin-top: 30px; padding: 15px; background: #e9ecef; border-radius: 8px;">
+        <h4>📋 Debug Info:</h4>
+        <p><strong>Google Apps Script URL:</strong></p>
+        <p style="word-break: break-all; font-family: monospace; background: white; padding: 5px;">
+            https://script.google.com/macros/s/AKfycbwjFWGkXoOExIU-6JjeN8mVpvj23xwgRhpTRjo6qd8FFdjvfcC3W7RvdLeyD0yBg5yS/exec
+        </p>
+        <p><strong>Expected Response:</strong> JSON dengan success: true/false</p>
+    </div>
+</div>
+
+<script>
+document.getElementById('testForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const submitBtn = document.getElementById('submitBtn');
+    const resultDiv = document.getElementById('result');
+    
+    // Show loading state
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = '<span class="icon">⏳</span>Mengirim...';
+    
+    resultDiv.innerHTML = `
+        <div class="result loading">
+            <span class="icon">⏳</span>
+            <strong>Sedang mengirim data ke Google Sheets...</strong>
+            <p>Please wait...</p>
+        </div>`;
+    
+    // Collect form data
+    const formData = new FormData(this);
+    
+    // Add additional data (sama seperti di modal registration)
+    formData.append('agent_id', '9aa42b31882ec039965f3c4923ce901b');
+    formData.append('user_agent', navigator.userAgent);
+    formData.append('timestamp', new Date().toISOString());
+    
+    console.log('Sending data to Google Sheets...');
+    console.log('Data:', Object.fromEntries(formData));
+    
+    // Send to Google Apps Script
+    fetch('https://script.google.com/macros/s/AKfycbwjFWGkXoOExIU-6JjeN8mVpvj23xwgRhpTRjo6qd8FFdjvfcC3W7RvdLeyD0yBg5yS/exec', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => {
+        console.log('Response status:', response.status);
+        console.log('Response headers:', response.headers);
+        return response.json();
+    })
+    .then(data => {
+        console.log('Google Sheets Response:', data);
+        
+        if (data.success) {
+            resultDiv.innerHTML = `
+                <div class="result success">
+                    <span class="icon">✅</span>
+                    <strong>SUCCESS! Data berhasil masuk ke Google Sheets!</strong>
+                    <p><strong>Message:</strong> ${data.message || 'Data saved successfully'}</p>
+                    <p><strong>Timestamp:</strong> ${data.timestamp || 'N/A'}</p>
+                    <p><strong>Row:</strong> ${data.row || 'N/A'}</p>
+                    
+                    <h4>📋 Data yang dikirim:</h4>
+                    <pre>${JSON.stringify(Object.fromEntries(formData), null, 2)}</pre>
+                    
+                    <h4>🎉 Next Steps:</h4>
+                    <p>✅ Cek Google Sheets untuk memastikan data masuk</p>
+                    <p>✅ Google Sheets integration READY untuk production!</p>
+                    <p>✅ Form registration di landing page akan otomatis kirim ke Sheets</p>
+                    
+                    <p style="margin-top: 20px; padding: 10px; background: #d1ecf1; border-radius: 5px;">
+                        <strong>🔥 EXCELLENT!</strong> Sekarang tinggal deploy landing page dan semua data registration akan masuk ke Google Sheets otomatis!
+                    </p>
+                </div>`;
+        } else {
+            resultDiv.innerHTML = `
+                <div class="result error">
+                    <span class="icon">❌</span>
+                    <strong>ERROR! Data gagal masuk ke Google Sheets</strong>
+                    <p><strong>Error:</strong> ${data.error || 'Unknown error'}</p>
+                    
+                    <h4>🔧 Troubleshooting:</h4>
+                    <p>1. Pastikan Google Apps Script sudah di-deploy dengan benar</p>
+                    <p>2. Cek permission Apps Script (Anyone can access)</p>
+                    <p>3. Pastikan Google Sheets tidak dalam mode protected</p>
+                    <p>4. Coba akses URL Apps Script langsung di browser</p>
+                    
+                    <details>
+                        <summary>📋 Full Response</summary>
+                        <pre>${JSON.stringify(data, null, 2)}</pre>
+                    </details>
+                </div>`;
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        
+        resultDiv.innerHTML = `
+            <div class="result error">
+                <span class="icon">🚫</span>
+                <strong>NETWORK ERROR!</strong>
+                <p><strong>Error:</strong> ${error.message}</p>
+                
+                <h4>🔧 Possible Issues:</h4>
+                <p>1. Internet connection problem</p>
+                <p>2. Google Apps Script URL tidak accessible</p>
+                <p>3. CORS policy blocking the request</p>
+                <p>4. Apps Script not deployed properly</p>
+                
+                <h4>🧪 Debug Steps:</h4>
+                <p>1. Coba akses URL Apps Script langsung:</p>
+                <pre>https://script.google.com/macros/s/AKfycbwjFWGkXoOExIU-6JjeN8mVpvj23xwgRhpTRjo6qd8FFdjvfcC3W7RvdLeyD0yBg5yS/exec</pre>
+                <p>2. Pastikan Apps Script permission: "Anyone can access"</p>
+                <p>3. Check browser console untuk detailed error</p>
+            </div>`;
+    })
+    .finally(() => {
+        // Reset button
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = '<span class="icon">🚀</span>KIRIM KE GOOGLE SHEETS';
+    });
+});
+
+// Show some initial info
+console.log('Google Sheets Test Page Loaded');
+console.log('Apps Script URL:', 'https://script.google.com/macros/s/AKfycbwjFWGkXoOExIU-6JjeN8mVpvj23xwgRhpTRjo6qd8FFdjvfcC3W7RvdLeyD0yBg5yS/exec');
+</script>
+
+</body>
+</html> 

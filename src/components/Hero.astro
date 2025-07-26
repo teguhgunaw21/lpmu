@@ -1,0 +1,237 @@
+---
+// Hero.astro - Hero section component for Mentoring Umroh landing page
+---
+
+<section id="hero" class="islamic-pattern min-h-screen text-white">
+	<div class="relative z-10 max-w-5xl mx-auto px-4 py-16 sm:px-6 lg:px-8">
+		
+		<!-- Top Note -->
+		<div class="text-center mb-10 animate-fadeInUp">
+			<div class="inline-flex items-center bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 sm:px-6 sm:py-3 text-sm font-medium border border-white/20 max-w-full">
+				<span class="flex h-2 w-2 rounded-full bg-emerald-400 mr-2 sm:mr-3 animate-pulse flex-shrink-0"></span>
+				<span class="text-emerald-100 text-center leading-tight">
+					<span class="block sm:inline">10.000+ orang sudah mengikuti</span>
+					<span class="block sm:inline sm:ml-1">pembelajaran Mentoring Umroh</span>
+				</span>
+			</div>
+		</div>
+
+		<!-- Main Headlines with Floating Icons -->
+		<div class="text-center mb-12 space-y-6 relative">
+			<!-- Floating Icons -->
+			
+			<!-- Crescent Moon Icon -->
+			<div class="floating-icon floating-icon-2 absolute">
+				<svg class="w-6 h-6 text-yellow-300/40" fill="currentColor" viewBox="0 0 24 24">
+					<path d="M17.75 4.09L15.5 6.34C16.19 7.56 16.5 8.94 16.5 10.5C16.5 15.75 12.25 20 7 20C5.44 20 3.94 19.69 2.75 19.09C4.06 21.31 6.73 22.5 9.5 22.5C14.75 22.5 19 18.25 19 13C19 9.11 17.08 5.7 17.75 4.09Z"/>
+				</svg>
+			</div>
+
+			<!-- Star Icon -->
+			<div class="floating-icon floating-icon-3 absolute">
+				<svg class="w-5 h-5 text-yellow-200/40" fill="currentColor" viewBox="0 0 24 24">
+					<path d="M12 2L15.09 8.26L22 9L17 14L18.18 21L12 17.77L5.82 21L7 14L2 9L8.91 8.26L12 2Z"/>
+				</svg>
+			</div>
+
+			<!-- Laptop Icon -->
+			<div class="floating-icon floating-icon-4 absolute">
+				<svg class="w-6 h-6 sm:w-7 sm:h-7 text-blue-300/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+				</svg>
+			</div>
+
+			<!-- Smartphone Icon -->
+			<div class="floating-icon floating-icon-5 absolute">
+				<svg class="w-4 h-4 sm:w-5 sm:h-5 text-blue-200/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a1 1 0 001-1V4a1 1 0 00-1-1H8a1 1 0 00-1 1v16a1 1 0 001 1z"/>
+				</svg>
+			</div>
+
+			<!-- Chart Icon -->
+			<div class="floating-icon floating-icon-6 absolute">
+				<svg class="w-5 h-5 sm:w-6 sm:h-6 text-green-300/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
+				</svg>
+			</div>
+
+			<!-- Another Star Icon -->
+			<div class="floating-icon floating-icon-7 absolute">
+				<svg class="w-3 h-3 sm:w-4 sm:h-4 text-yellow-100/30" fill="currentColor" viewBox="0 0 24 24">
+					<path d="M12 2L15.09 8.26L22 9L17 14L18.18 21L12 17.77L5.82 21L7 14L2 9L8.91 8.26L12 2Z"/>
+				</svg>
+			</div>
+
+			<h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight animate-fadeInUp delay-100 relative z-10">
+				<span class="block text-white">Mau Belajar</span>
+				<span class="block text-emerald-300">Digital Marketing</span>
+				<span class="block text-white">untuk <span class="text-emerald-300">Jualan Produk Umroh?</span></span>
+			</h1>
+			
+			<p class="text-xl sm:text-2xl text-slate-200 font-medium max-w-3xl mx-auto leading-relaxed animate-fadeInUp delay-200 relative z-10">
+				Yuk belajar jualan produk Umroh secara <span class="text-emerald-300 font-semibold">Gratis</span> bersama komunitas Mentoring Umroh
+			</p>
+
+			<!-- Webinar Title -->
+			<div class="mt-6 animate-fadeInUp delay-250 relative z-10">
+				<p class="text-lg sm:text-xl text-center text-slate-200 font-medium max-w-3xl mx-auto leading-relaxed">
+					<span class="text-emerald-300 font-semibold">WEBINAR GRATIS</span><br>
+					<span class="text-white">"Dari Rumah Ke Baitullah : Cara Jualan Puluhan Sampai Ratusan Jamaah Full Online"</span>
+				</p>
+			</div>
+		</div>
+
+		<!-- Benefits Section - Compact Layout -->
+		<div class="mb-16 animate-fadeInUp delay-300">
+			<h2 class="text-2xl sm:text-3xl font-bold text-center mb-8 text-white">
+				Begitu Anda Bergabung, Anda Akan Mendapatkan:
+			</h2>
+
+			<!-- Main Benefits (Top 3) -->
+			<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+				
+				<!-- Benefit Card 1 -->
+				<div class="benefit-card rounded-xl p-5 animate-fadeInScale delay-400">
+					<div class="flex items-start space-x-3 mb-4">
+						<div class="icon-container w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0">
+							<svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+							</svg>
+						</div>
+						<div class="flex-1">
+							<h3 class="text-lg font-bold text-slate-800 mb-2">Materi Via Zoom</h3>
+						</div>
+					</div>
+					<p class="text-slate-600 text-sm leading-relaxed">
+						Dari mindset jualan, pengenalan digital marketing, hingga praktek Facebook Ads untuk produk Umroh
+					</p>
+				</div>
+
+				<!-- Benefit Card 2 -->
+				<div class="benefit-card rounded-xl p-5 animate-fadeInScale delay-500">
+					<div class="flex items-start space-x-3 mb-4">
+						<div class="icon-container w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0">
+							<svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+							</svg>
+						</div>
+						<div class="flex-1">
+							<h3 class="text-lg font-bold text-slate-800 mb-2">Study Case</h3>
+						</div>
+					</div>
+					<p class="text-slate-600 text-sm leading-relaxed">
+						Studi kasus mengumpulkan 18.000 calon jamaah dalam 2 bulan
+					</p>
+				</div>
+
+				<!-- Benefit Card 3 -->
+				<div class="benefit-card rounded-xl p-5 animate-fadeInScale delay-600">
+					<div class="flex items-start space-x-3 mb-4">
+						<div class="icon-container w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0">
+							<svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"/>
+							</svg>
+						</div>
+						<div class="flex-1">
+							<h3 class="text-lg font-bold text-slate-800 mb-2">Peluang Income</h3>
+						</div>
+					</div>
+					<p class="text-slate-600 text-sm leading-relaxed">
+						Bimbingan jadi agen Umroh intensif dari komunitas Mentoring Umroh
+					</p>
+				</div>
+
+			</div>
+
+			<!-- Additional Benefits (Compact List) -->
+			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+				
+				<!-- Compact Benefit 1 - Bonus Tutorial -->
+				<div class="benefit-card-compact bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20 animate-fadeInScale delay-400">
+					<div class="flex items-center space-x-3">
+						<div class="icon-container-small w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0">
+							<svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+								<path d="M8 5v14l11-7z"/>
+							</svg>
+						</div>
+						<div>
+							<h4 class="text-white font-semibold text-sm">Bonus Tutorial</h4>
+							<p class="text-slate-300 text-xs">Video Facebook & IG Ads gratis</p>
+						</div>
+					</div>
+				</div>
+
+				<!-- Compact Benefit 2 -->
+				<div class="benefit-card-compact bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20 animate-fadeInScale delay-500">
+					<div class="flex items-center space-x-3">
+						<div class="icon-container-small w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0">
+							<svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+							</svg>
+						</div>
+						<div>
+							<h4 class="text-white font-semibold text-sm">Kopdar Offline</h4>
+							<p class="text-slate-300 text-xs">Praktek langsung Meta Ads</p>
+						</div>
+					</div>
+				</div>
+
+				<!-- Compact Benefit 3 - Grup Eksklusif -->
+				<div class="benefit-card-compact bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20 animate-fadeInScale delay-600">
+					<div class="flex items-center space-x-3">
+						<div class="icon-container-small w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0">
+							<svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+							</svg>
+						</div>
+						<div>
+							<h4 class="text-white font-semibold text-sm">Grup Eksklusif</h4>
+							<p class="text-slate-300 text-xs">Telegram & WhatsApp rutin</p>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+
+		<!-- Final Support Text -->
+		<div class="text-center mb-12 animate-slideInLeft delay-400">
+			<p class="text-lg sm:text-xl text-slate-200 max-w-3xl mx-auto leading-relaxed">
+				<span class="font-semibold text-emerald-300">Cocok untuk Anda</span> yang ingin mendapatkan income tambahan dari produk Umroh dan dibimbing langsung dari komunitas berpengalaman.
+			</p>
+		</div>
+
+		<!-- Navigation Button -->
+		<div class="text-center animate-fadeInUp delay-500">
+			<a href="#problem" class="group inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-bold text-white bg-gradient-to-r from-emerald-600 to-emerald-700 rounded-xl hover:from-emerald-700 hover:to-emerald-800 focus:outline-none focus:ring-4 focus:ring-emerald-300 transition-all duration-300 shadow-lg hover:shadow-emerald-500/25 hover:-translate-y-1 transform">
+				<svg class="w-5 h-5 sm:w-6 sm:h-6 mr-2 sm:mr-3 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"/>
+				</svg>
+				<span class="text-center leading-tight">CEK MASALAH YANG ANDA HADAPI</span>
+				<svg class="w-4 h-4 sm:w-5 sm:h-5 ml-2 sm:ml-3 group-hover:translate-y-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7"/>
+				</svg>
+			</a>
+			
+			<p class="mt-4 sm:mt-6 text-xs sm:text-sm text-slate-300 text-center">
+				✓ 100% Gratis • ✓ 2x Zoom Webinar • ✓ 1x Kopdar
+			</p>
+		</div>
+
+
+
+	</div>
+
+	<!-- Subtle Decorative Elements -->
+	<div class="absolute top-20 left-10 opacity-10">
+		<div class="w-24 h-24 border border-white/30 rounded-full"></div>
+	</div>
+	<div class="absolute bottom-20 right-10 opacity-10">
+		<div class="w-20 h-20 border border-white/30 rounded-full"></div>
+	</div>
+	<div class="absolute top-1/2 left-8 opacity-10">
+		<div class="w-16 h-16 border border-white/30 rounded-full"></div>
+	</div>
+</section> 

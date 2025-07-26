@@ -1,0 +1,144 @@
+---
+// FinalCTASection.astro - Final CTA section with pricing and urgency for Mentoring Umroh
+---
+
+<section id="final-cta" class="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 py-16 sm:py-20 text-white relative overflow-hidden">
+	<!-- Animated Background Elements -->
+	<div class="absolute inset-0 opacity-20">
+		<div class="absolute top-10 left-10 w-72 h-72 bg-emerald-500/10 rounded-full blur-3xl animate-pulse"></div>
+		<div class="absolute bottom-10 right-10 w-96 h-96 bg-yellow-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+		<div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-emerald-400/5 rounded-full blur-3xl animate-pulse delay-2000"></div>
+	</div>
+
+	<div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative text-center">
+		
+		<!-- Main Headline -->
+		<div class="mb-12 animate-fadeInUp">
+			<h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-8 leading-tight">
+				Yaa.. Saya Mau Daftar <span class="text-emerald-300">MENTORING ZOOM</span><br>
+				<span class="text-yellow-400">"Jualan Produk Umroh"</span> INI..<br>
+				<span class="text-white">Berapa Biayanya?</span>
+			</h2>
+		</div>
+
+		<!-- Pricing Display -->
+		<div class="mb-12 animate-fadeInUp delay-200">
+			<div class="bg-white/5 backdrop-blur-sm rounded-3xl p-8 sm:p-12 border border-white/10 max-w-2xl mx-auto">
+				
+				<!-- Crossed Out Prices -->
+				<div class="space-y-4 mb-6">
+					<div class="relative">
+						<span class="text-3xl sm:text-4xl font-bold text-red-500 line-through decoration-4 decoration-red-500">
+							Rp 199.000
+						</span>
+						<div class="absolute -top-2 -right-2 bg-red-500 text-white text-xs px-2 py-1 rounded-full transform rotate-12">
+							MAHAL!
+						</div>
+					</div>
+					
+					<div class="relative">
+						<span class="text-2xl sm:text-3xl font-bold text-red-400 line-through decoration-3 decoration-red-400">
+							Rp 99.000
+						</span>
+						<div class="absolute -top-2 -right-2 bg-red-400 text-white text-xs px-2 py-1 rounded-full transform -rotate-12">
+							MASIH MAHAL!
+						</div>
+					</div>
+				</div>
+
+				<!-- Final Price -->
+				<div class="mb-8">
+					<div class="text-6xl sm:text-7xl lg:text-8xl font-black text-yellow-400 mb-4 animate-pulse">
+						Rp. 0
+					</div>
+					<div class="inline-block bg-gradient-to-r from-emerald-400 to-emerald-500 text-slate-900 text-2xl sm:text-3xl font-black px-6 py-3 rounded-2xl transform -rotate-3 shadow-2xl">
+						(GRATIS)
+					</div>
+				</div>
+
+				<!-- Confirmation Text -->
+				<p class="text-xl sm:text-2xl text-white font-semibold mb-2">
+					Yaps, Anda <span class="text-emerald-300 font-bold">Tidak Salah Baca!</span>
+				</p>
+				<p class="text-lg sm:text-xl text-slate-300 mb-6">
+					Kelas Ini <span class="text-yellow-400 font-bold">Rp 0 (untuk saat ini)</span> !
+				</p>
+				<p class="text-base sm:text-lg text-slate-400">
+					Tapi, <span class="text-red-400 font-semibold">Mohon maaf..</span>
+				</p>
+			</div>
+		</div>
+
+		<!-- Urgency Messaging -->
+		<div class="mb-12 animate-fadeInUp delay-400">
+			<div class="bg-gradient-to-r from-yellow-500/20 to-orange-500/20 backdrop-blur-sm rounded-2xl p-4 sm:p-6 lg:p-8 border-2 border-yellow-400/50 mb-6 sm:mb-8 urgency-pulse">
+				<div class="text-xl sm:text-2xl lg:text-3xl font-black text-yellow-400 mb-3 sm:mb-4 animate-bounce text-center">
+					⚠️ Kuota Peserta SANGAT TERBATAS ! ⚠️
+				</div>
+				<p class="text-base sm:text-lg lg:text-xl text-white leading-relaxed mb-3 sm:mb-4 text-center">
+					<span class="font-bold text-emerald-300">Kenapa?</span> Agar Kelas Mentoring ini lebih fokus & kami bisa lebih maksimal membantu Anda !
+				</p>
+				<p class="text-lg sm:text-xl lg:text-2xl font-bold text-white text-center">
+					Jadi.. <span class="text-yellow-400">Cepet Cepetan Daftar</span> aja yaa !
+				</p>
+			</div>
+
+			<!-- Additional Urgency -->
+			<div class="space-y-3 sm:space-y-4">
+				<p class="text-lg sm:text-xl lg:text-2xl font-black text-yellow-400 animate-pulse text-center px-2">
+					🔥 Jangan Tunggu sampai kuota peserta HABIS ! 🔥
+				</p>
+				<p class="text-base sm:text-lg lg:text-xl font-bold text-red-400 text-center px-2">
+					Daftar Sekarang Sebelum Menyesal Karena Kelas Udah <span class="bg-red-500 text-white px-1 sm:px-2 py-1 rounded text-sm sm:text-base">FULL</span> !
+				</p>
+			</div>
+		</div>
+
+		<!-- Main CTA Button -->
+		<div class="mb-12 animate-fadeInUp delay-600">
+			<button 
+				id="openRegistrationModal"
+				class="final-cta-button group inline-flex items-center justify-center px-8 sm:px-12 py-5 sm:py-6 text-lg sm:text-xl lg:text-2xl font-black text-slate-900 bg-gradient-to-r from-yellow-400 via-yellow-500 to-orange-500 rounded-2xl hover:from-yellow-500 hover:via-orange-500 hover:to-red-500 focus:outline-none focus:ring-4 focus:ring-yellow-300 transition-all duration-300 shadow-2xl hover:shadow-yellow-500/50 hover:-translate-y-2 transform cursor-pointer"
+			>
+				<svg class="w-6 h-6 sm:w-7 sm:h-7 mr-3 group-hover:animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+				</svg>
+				KLIK DISINI UNTUK MENDAFTAR!
+			</button>
+			
+			<!-- Additional CTAs -->
+			<div class="mt-6 sm:mt-8 space-y-3 sm:space-y-4">
+				<p class="text-base sm:text-lg font-semibold text-emerald-300 text-center px-2">
+					✅ 100% GRATIS • ✅ 2x Zoom • ✅ 1x Kopdar
+				</p>
+				<p class="text-sm sm:text-base text-yellow-400 font-medium text-center px-2">
+					🎯 Kuota Terbatas - Hanya untuk 100 Orang Pertama! 🎯
+				</p>
+			</div>
+		</div>
+
+		<!-- Warning Message -->
+		<div class="animate-fadeInUp delay-800">
+			<div class="bg-red-600/20 backdrop-blur-sm rounded-xl p-4 border border-red-500/50 max-w-3xl mx-auto">
+				<p class="text-sm sm:text-base text-slate-300 leading-relaxed">
+					<span class="text-red-400 font-semibold">⚠️ PERINGATAN:</span> 
+					(kuota habis menandakan bahwa Anda sudah tidak bisa daftar kelas ini dan link pendaftaran di atas pun sudah tidak bisa Anda ciklik lagi)
+				</p>
+			</div>
+		</div>
+
+		<!-- Timer/Countdown (Optional) -->
+		<div class="mt-12 animate-fadeInUp delay-1000">
+			<div class="bg-gradient-to-r from-red-600/20 to-orange-600/20 backdrop-blur-sm rounded-2xl p-6 border border-red-400/30 max-w-md mx-auto">
+				<p class="text-red-400 font-bold text-lg mb-2">⏰ WAKTU TERBATAS!</p>
+				<p class="text-white text-sm">
+					Webinar dimulai dalam waktu dekat.<br>
+					<span class="text-yellow-400 font-semibold">Segera daftar sebelum terlambat!</span>
+				</p>
+			</div>
+		</div>
+
+	</div>
+
+
+</section> 

@@ -1,0 +1,534 @@
+---
+// RegistrationModal.astro - Modal popup for registration form
+---
+
+<!-- Modal Overlay (Hidden by default) -->
+<div id="registrationModal" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
+	<div class="bg-slate-800 rounded-2xl w-full max-w-md mx-auto shadow-2xl transform transition-all duration-300 scale-95 opacity-0 modal-content">
+		
+		<!-- Modal Header -->
+		<div class="bg-gradient-to-r from-emerald-500 to-emerald-600 rounded-t-2xl p-4 sm:p-6 text-center relative">
+			<button id="closeModal" class="absolute top-3 right-3 sm:top-4 sm:right-4 w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center rounded-full bg-white/20 hover:bg-white/30 text-white hover:text-white transition-all duration-200 backdrop-blur-sm">
+				<svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
+					<path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+				</svg>
+			</button>
+			<h2 class="text-base sm:text-xl lg:text-2xl font-bold text-white leading-tight pr-10 sm:pr-12">
+				Silakan isi form dibawah ini untuk mendaftar Webminar Gratis Digital Marketing for Umroh!
+			</h2>
+		</div>
+
+		<!-- Modal Body -->
+		<div class="p-6">
+			<form id="registrationForm" class="space-y-4">
+				
+				<!-- Hidden Fields -->
+				<input type="hidden" name="fk_id_agent" value="9aa42b31882ec039965f3c4923ce901b">
+				<input type="hidden" name="fk_id_produk" value="c4ca4238a0b923820dcc509a6f75849b">
+				<input type="hidden" name="fk_id_produk_2" value="44f683a84163b3523afe57c2e008bc8c">
+				<input type="hidden" name="fk_id_produk_3" value="66f041e16a60928b05a7e228a89c3799">
+				<input type="hidden" name="fk_id_produk_4" value="6f4922f45568161a8cdf4ad2299f6d23">
+				<input type="hidden" name="fk_id_produk_5" value="c74d97b01eae257e44aa9d5bade97baf">
+				<input type="hidden" name="fk_id_produk_6" value="1f0e3dad99908345f7439f8ffabdffc4">
+				<input type="hidden" name="fk_id_produk_7" value="d1fe173d08e959397adf34b1d77e88d7">
+				<input type="hidden" name="fk_id_produk_8" value="7cbbc409ec990f19c78c75bd1e06f215">
+				<input type="hidden" name="fk_id_produk_9" value="9778d5d219c5080b9a6a17bef029331c">
+				<input type="hidden" name="fk_id_produk_10" value="fe9fc289c3ff0af142b6d3bead98a923">
+				
+				<!-- Nama Anda -->
+				<div>
+					<label for="nama" class="block text-sm font-medium text-white mb-2">
+						Nama Anda <span class="text-red-400">*</span>
+					</label>
+					<input 
+						type="text" 
+						id="nama" 
+						name="nama" 
+						required
+						placeholder="Nama Anda"
+						class="w-full px-4 py-3 rounded-lg bg-slate-700 border border-slate-600 text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:border-emerald-400 transition-colors duration-200"
+					>
+				</div>
+
+				<!-- Nomor WhatsApp -->
+				<div>
+					<label for="whatsapp" class="block text-sm font-medium text-white mb-2">
+						Nomor Wa (Masukan Nomor Wa Aktif, Untuk Dimasukan ke Grup) <span class="text-red-400">*</span>
+					</label>
+					<input 
+						type="tel" 
+						id="whatsapp" 
+						name="whatsapp" 
+						required
+						placeholder="Nomor Wa"
+						class="w-full px-4 py-3 rounded-lg bg-slate-700 border border-slate-600 text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:border-emerald-400 transition-colors duration-200"
+					>
+				</div>
+
+				<!-- Email -->
+				<div>
+					<label for="email" class="block text-sm font-medium text-white mb-2">
+						Email (Untuk Dikirim Materi) <span class="text-red-400">*</span>
+					</label>
+					<input 
+						type="email" 
+						id="email" 
+						name="email" 
+						required
+						placeholder="Email"
+						class="w-full px-4 py-3 rounded-lg bg-slate-700 border border-slate-600 text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:border-emerald-400 transition-colors duration-200"
+					>
+				</div>
+
+				<!-- Sapaan -->
+				<div>
+					<label for="sapaan" class="block text-sm font-medium text-white mb-2">
+						Sapaan <span class="text-red-400">*</span>
+					</label>
+					<select 
+						id="sapaan" 
+						name="sapaan" 
+						required
+						class="w-full px-4 py-3 rounded-lg bg-slate-700 border border-slate-600 text-white focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:border-emerald-400 transition-colors duration-200"
+					>
+						<option value="">Bapak</option>
+						<option value="Bapak">Bapak</option>
+						<option value="Ibu">Ibu</option>
+						<option value="Mas">Mas</option>
+						<option value="Mbak">Mbak</option>
+						<option value="Ustadz">Ustadz</option>
+						<option value="Ustadzah">Ustadzah</option>
+					</select>
+				</div>
+
+				<!-- Asal Kota -->
+				<div>
+					<label for="asal_kota" class="block text-sm font-medium text-white mb-2">
+						Asal Kota <span class="text-red-400">*</span>
+					</label>
+					<input 
+						type="text" 
+						id="asal_kota" 
+						name="asal_kota" 
+						required
+						placeholder="Asal Kota Anda"
+						class="w-full px-4 py-3 rounded-lg bg-slate-700 border border-slate-600 text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:border-emerald-400 transition-colors duration-200"
+					>
+				</div>
+
+				<!-- Saya Adalah Seorang -->
+				<div>
+					<label for="status" class="block text-sm font-medium text-white mb-2">
+						Saya Adalah Seorang <span class="text-red-400">*</span>
+					</label>
+					<select 
+						id="status" 
+						name="status" 
+						required
+						class="w-full px-4 py-3 rounded-lg bg-slate-700 border border-slate-600 text-white focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:border-emerald-400 transition-colors duration-200"
+					>
+						<option value="">Pemula Ingin Belajar Jualan Umroh</option>
+						<option value="Pemula Ingin Belajar Jualan Umroh">Pemula Ingin Belajar Jualan Umroh</option>
+						<option value="Agent Umroh">Agent Umroh</option>
+						<option value="Owner Travel Umroh">Owner Travel Umroh</option>
+						<option value="Digital Marketer">Digital Marketer</option>
+						<option value="Lainnya">Lainnya</option>
+					</select>
+				</div>
+
+				<!-- Submit Button -->
+				<div class="pt-4">
+					<button 
+						type="submit"
+						class="w-full bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700 text-white font-bold py-4 px-6 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 focus:outline-none focus:ring-4 focus:ring-emerald-300"
+					>
+						<svg class="w-5 h-5 inline mr-2" fill="currentColor" viewBox="0 0 24 24">
+							<path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
+						</svg>
+						Kirim Sekarang
+					</button>
+				</div>
+
+			</form>
+		</div>
+
+	</div>
+</div>
+
+<script>
+	// Registration Modal Functionality
+	document.addEventListener('DOMContentLoaded', function() {
+		const modal = document.getElementById('registrationModal') as HTMLElement | null;
+		const modalContent = document.querySelector('.modal-content') as HTMLElement | null;
+		const openModalButton = document.getElementById('openRegistrationModal');
+		const closeModalButton = document.getElementById('closeModal');
+		const registrationForm = document.getElementById('registrationForm') as HTMLFormElement | null;
+
+		// Open modal function
+		function openModal() {
+			if (modal) {
+				modal.classList.remove('hidden');
+				modal.classList.add('flex');
+			}
+			
+			// Animate modal appearance
+			setTimeout(() => {
+				if (modalContent) {
+					modalContent.classList.remove('scale-95', 'opacity-0');
+					modalContent.classList.add('scale-100', 'opacity-100');
+				}
+			}, 10);
+		}
+
+		// Close modal function
+		function closeModal() {
+			if (modalContent) {
+				modalContent.classList.add('scale-95', 'opacity-0');
+				modalContent.classList.remove('scale-100', 'opacity-100');
+			}
+			
+			setTimeout(() => {
+				if (modal) {
+					modal.classList.add('hidden');
+					modal.classList.remove('flex');
+				}
+			}, 300);
+		}
+
+		// Event listeners
+		if (openModalButton) {
+			openModalButton.addEventListener('click', function(e) {
+				e.preventDefault();
+				openModal();
+			});
+		}
+
+		if (closeModalButton) {
+			closeModalButton.addEventListener('click', closeModal);
+		}
+
+		// Close modal when clicking outside
+		if (modal) {
+			modal.addEventListener('click', function(e) {
+				if (e.target === modal) {
+					closeModal();
+				}
+			});
+		}
+
+		// Handle form submission with API integration
+		if (registrationForm) {
+			registrationForm.addEventListener('submit', function(e) {
+				e.preventDefault();
+				
+				// Collect form data
+				const formData = new FormData(registrationForm);
+				const data = Object.fromEntries(formData);
+				
+				// Extract and validate data
+				const namaCustomer = data.nama as string || '';
+				let noWa = data.whatsapp as string || '';
+				let email = data.email as string || '';
+				const panggilan = data.sapaan as string || '';
+				const alamat = data.asal_kota as string || '';
+				const pekerjaan = data.status as string || '';
+				const agentId = data.fk_id_agent as string || '';
+				
+				// Extract all product IDs
+				const produk1 = data.fk_id_produk as string || '';
+				const produk2 = data.fk_id_produk_2 as string || '';
+				const produk3 = data.fk_id_produk_3 as string || '';
+				const produk4 = data.fk_id_produk_4 as string || '';
+				const produk5 = data.fk_id_produk_5 as string || '';
+				const produk6 = data.fk_id_produk_6 as string || '';
+				const produk7 = data.fk_id_produk_7 as string || '';
+				const produk8 = data.fk_id_produk_8 as string || '';
+				const produk9 = data.fk_id_produk_9 as string || '';
+				const produk10 = data.fk_id_produk_10 as string || '';
+				
+				// Default email if empty
+				if (!email) {
+					email = 'teguhgunawan21@gmail.com';
+				}
+				
+				// Normalize WhatsApp number
+				noWa = noWa.replace(/[^0-9]/g, '');
+				if (!noWa.startsWith('62')) {
+					if (noWa.startsWith('0')) {
+						noWa = '62' + noWa.slice(1);
+					} else {
+						noWa = '62' + noWa;
+					}
+				}
+				
+				// Validation
+				if (!namaCustomer || !noWa || !panggilan || !agentId || !produk1) {
+					alert('Harap lengkapi semua field wajib!');
+					return;
+				}
+				
+				// Show loading state
+				const submitButton = registrationForm.querySelector('button[type="submit"]') as HTMLButtonElement;
+				if (submitButton) {
+					const originalText = submitButton.innerHTML;
+					submitButton.innerHTML = '<svg class="w-5 h-5 inline mr-2 animate-spin" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>Mengirim...';
+					submitButton.disabled = true;
+					
+					// Prepare payloads
+					const dripsenderPayload = {
+						name: namaCustomer,
+						phone: noWa,
+						email: email,
+						panggilan: panggilan,
+						alamat: alamat,
+						pekerjaan: pekerjaan,
+					};
+
+					const memberAreaPayload = {
+						fk_id_agent: agentId,
+						nama_customer: namaCustomer,
+						no_wa: noWa,
+						email: email,
+					};
+
+					// Send to DripSender (Mingguan)
+					fetch("https://ishaq.dripsender.id:11238/api/integration/d342634e-bab2-4572-8442-fa6addc32fb5", {
+						method: "POST",
+						headers: { "Content-Type": "application/json" },
+						body: JSON.stringify(dripsenderPayload)
+					})
+					.then(response => response.json())
+					.then(data => console.log('Success DripSender (Mingguan):', data))
+					.catch(error => console.error('Error DripSender (Mingguan):', error));
+
+					// Send to DripSender (All Database)
+					fetch("https://ishaq.dripsender.id:11238/api/integration/457bdc9b-45dc-45d0-8685-8f31a09db8ca", {
+						method: "POST",
+						headers: { "Content-Type": "application/json" },
+						body: JSON.stringify(dripsenderPayload)
+					})
+					.then(response => response.json())
+					.then(data => console.log('Success DripSender (All Database):', data))
+					.catch(error => console.error('Error DripSender (All Database):', error));
+
+					// Send to Google Sheets
+					const sheetsData = {
+						nama: namaCustomer,
+						whatsapp: noWa,
+						email: email,
+						sapaan: panggilan,
+						asal_kota: alamat,
+						status: pekerjaan,
+						agent_id: agentId,
+						ip_address: '', // Will be detected by server
+						user_agent: navigator.userAgent
+					};
+
+					fetch('https://script.google.com/macros/s/AKfycbwjFWGkXoOExIU-6JjeN8mVpvj23xwgRhpTRjo6qd8FFdjvfcC3W7RvdLeyD0yBg5yS/exec', {
+						method: 'POST',
+						headers: {
+							'Content-Type': 'application/x-www-form-urlencoded',
+						},
+						body: new URLSearchParams(sheetsData).toString()
+					})
+					.then(response => response.json())
+					.then(data => {
+						console.log('✅ Google Sheets saved:', data);
+					})
+					.catch(error => {
+						console.error('⚠️ Google Sheets error:', error);
+						// Don't fail the whole process if Sheets fails
+					});
+
+					// Send email notification using custom mail server
+					const emailData = {
+						to_email: 'teguhgunawan21@gmail.com',
+						from_name: namaCustomer,
+						from_email: email,
+						subject: 'PENDAFTARAN WEBINAR MENTORING UMROH - ' + namaCustomer,
+						nama: namaCustomer,
+						whatsapp: noWa,
+						email: email,
+						sapaan: panggilan,
+						asal_kota: alamat,
+						status: pekerjaan,
+						agent_id: agentId,
+						waktu_daftar: new Date().toLocaleString('id-ID')
+					};
+
+					// Send email notification via PHPMailer (WORKING!)
+					fetch('https://pejuangumroh.id/send-notification-phpmailer.php', {
+						method: 'POST',
+						headers: {
+							'Content-Type': 'application/x-www-form-urlencoded',
+						},
+						body: new URLSearchParams(emailData).toString()
+					})
+					.then(response => response.text())
+					.then(data => {
+						console.log('✅ Email notification sent:', data);
+					})
+					.catch(error => {
+						console.error('⚠️ Email service error:', error);
+						
+						// Backup: Open mailto as fallback
+						const mailtoSubject = encodeURIComponent('PENDAFTARAN WEBINAR MENTORING UMROH - ' + namaCustomer);
+						const mailtoBody = encodeURIComponent(`
+PENDAFTARAN WEBINAR BARU!
+
+Detail Pendaftar:
+====================
+Nama: ${namaCustomer}
+WhatsApp: ${noWa}
+Email: ${email}
+Sapaan: ${panggilan}
+Asal Kota: ${alamat}
+Status: ${pekerjaan}
+
+Agent ID: ${agentId}
+Produk Terdaftar: 10 produk umroh
+
+Waktu Daftar: ${new Date().toLocaleString('id-ID')}
+
+Terima kasih!
+						`.trim());
+						
+						const mailtoLink = `mailto:teguhgunawan21@gmail.com?subject=${mailtoSubject}&body=${mailtoBody}`;
+						
+						// Open mailto in new tab (won't interrupt user flow)
+						setTimeout(() => {
+							window.open(mailtoLink, '_blank');
+						}, 1000);
+						
+						console.log('📧 Mailto backup triggered');
+					});
+
+					// Send all products to Member Area
+					const allProduk = [
+						produk1, produk2, produk3, produk4,
+						produk5, produk6, produk7, produk8,
+						produk9, produk10
+					];
+
+					let completedRequests = 0;
+					let successfulRequests = 0;
+					let totalRequests = allProduk.filter(produk => produk).length;
+					let hasShownResult = false;
+
+					const checkCompletion = () => {
+						if (completedRequests === totalRequests && !hasShownResult) {
+							hasShownResult = true;
+							console.log(`Final result - Completed: ${completedRequests}/${totalRequests}, Successful: ${successfulRequests}/${totalRequests}`);
+							
+							// Save registration data to localStorage for thank you page
+							const registrationData = {
+								nama: namaCustomer,
+								whatsapp: noWa,
+								email: email,
+								sapaan: panggilan,
+								asal_kota: alamat,
+								status: pekerjaan,
+								timestamp: new Date().toLocaleString('id-ID')
+							};
+							localStorage.setItem('registrationData', JSON.stringify(registrationData));
+							
+							// Always show success if data masuk ke database
+							// Karena status 303 artinya berhasil submit (redirect response)
+							submitButton.innerHTML = '<svg class="w-5 h-5 inline mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Berhasil Dikirim!';
+							
+							// Redirect to thank you page after delay
+							setTimeout(() => {
+								window.location.href = "/thank-you";
+							}, 2000);
+						}
+					};
+
+					allProduk.forEach(produkId => {
+						if (produkId) {
+							const memberPayload = {
+								...memberAreaPayload,
+								fk_id_produk: produkId
+							};
+
+							fetch("https://pejuangumroh.pecintabaitullah.com/registrasi/saveCustomer", {
+								method: "POST",
+								headers: { 
+									"Content-Type": "application/x-www-form-urlencoded",
+									"Accept": "*/*"
+								},
+								body: new URLSearchParams(memberPayload).toString(),
+								mode: 'cors',
+								redirect: 'follow'
+							})
+							.then(response => {
+								console.log(`Product ${produkId} - Response status:`, response.status);
+								
+								// Status 303 = Success (redirect after POST)
+								// Status 200-299 = Success  
+								// Status 302 = Success (temporary redirect)
+								if (response.status >= 200 && response.status < 400) {
+									successfulRequests++;
+									console.log(`✅ Product ${produkId} - SUCCESS (Status: ${response.status})`);
+								} else {
+									console.log(`❌ Product ${produkId} - FAILED (Status: ${response.status})`);
+								}
+								
+								completedRequests++;
+								checkCompletion();
+								
+								return response.text();
+							})
+							.catch(error => {
+								console.error(`❌ Product ${produkId} - ERROR:`, error);
+								completedRequests++;
+								checkCompletion();
+							});
+						}
+					});
+				}
+			});
+		}
+
+		// Close modal with Escape key
+		document.addEventListener('keydown', function(e) {
+			if (e.key === 'Escape' && modal && !modal.classList.contains('hidden')) {
+				closeModal();
+			}
+		});
+	});
+</script>
+
+<style>
+	/* Modal transition styles */
+	.modal-content {
+		transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+	}
+
+	/* Custom scrollbar for modal */
+	.modal-content::-webkit-scrollbar {
+		width: 4px;
+	}
+
+	.modal-content::-webkit-scrollbar-track {
+		background: rgba(0, 0, 0, 0.1);
+	}
+
+	.modal-content::-webkit-scrollbar-thumb {
+		background: rgba(0, 0, 0, 0.3);
+		border-radius: 2px;
+	}
+
+	/* Form focus styles */
+	input:focus, select:focus {
+		box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+	}
+
+	/* Select arrow styling */
+	select {
+		background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+		background-position: right 0.5rem center;
+		background-repeat: no-repeat;
+		background-size: 1.5em 1.5em;
+		padding-right: 2.5rem;
+	}
+</style> 
