@@ -258,9 +258,10 @@
 				const produk9 = data.fk_id_produk_9 as string || '';
 				const produk10 = data.fk_id_produk_10 as string || '';
 				
-				// Default email if empty
+				// Email validation - must be provided by user
 				if (!email) {
-					email = 'teguhgunawan21@gmail.com';
+					alert('Harap masukkan email yang valid!');
+					return;
 				}
 				
 				// Normalize WhatsApp number
@@ -351,22 +352,6 @@
 						console.error('⚠️ Google Sheets error:', error);
 						// Don't fail the whole process if Sheets fails
 					});
-
-					// Send email notification using custom mail server
-					const emailData = {
-						to_email: 'teguhgunawan21@gmail.com',
-						from_name: namaCustomer,
-						from_email: email,
-						subject: 'PENDAFTARAN WEBINAR MENTORING UMROH - ' + namaCustomer,
-						nama: namaCustomer,
-						whatsapp: noWa,
-						email: email,
-						sapaan: panggilan,
-						asal_kota: alamat,
-						status: pekerjaan,
-						agent_id: agentId,
-						waktu_daftar: new Date().toLocaleString('id-ID')
-					};
 
 					// No email/WhatsApp notifications - form data will be saved to databases only
 					console.log('✅ Form data processed - no notifications sent (by user request)');
