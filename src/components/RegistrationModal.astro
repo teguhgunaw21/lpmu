@@ -220,7 +220,11 @@
 		// Track StartPayment event for form submit button
 		const formSubmitButton = document.getElementById('formSubmitButton');
 		if (formSubmitButton) {
-			formSubmitButton.addEventListener('click', function() {
+			formSubmitButton.addEventListener('click', function(event) {
+				// Prevent event bubbling to avoid triggering InitiateCheckout
+				event.preventDefault();
+				event.stopPropagation();
+				
 				// Track StartPayment event when "Kirim Sekarang" button is clicked
 				if (typeof (window as any).fbq !== 'undefined') {
 					(window as any).fbq('track', 'StartPayment', {
@@ -230,6 +234,11 @@
 						currency: 'IDR'
 					});
 					console.log('Meta Pixel: StartPayment event tracked - "Kirim Sekarang" button clicked');
+				}
+				
+				// Manually trigger form submission after tracking
+				if (registrationForm) {
+					registrationForm.dispatchEvent(new Event('submit'));
 				}
 			});
 		}
