@@ -97,13 +97,9 @@
 		<!-- Main CTA Button -->
 		<div class="mb-12 animate-fadeInUp delay-600">
 			<button 
-				id="openRegistrationModal"
-				class="main-cta-button final-cta-button group inline-flex items-center justify-center px-8 sm:px-12 py-5 sm:py-6 text-lg sm:text-xl lg:text-2xl font-black text-slate-900 bg-gradient-to-r from-yellow-400 via-yellow-500 to-orange-500 rounded-2xl hover:from-yellow-500 hover:via-orange-500 hover:to-red-500 focus:outline-none focus:ring-4 focus:ring-yellow-300 transition-all duration-300 shadow-2xl hover:shadow-yellow-500/50 hover:-translate-y-2 transform cursor-pointer"
+				class="main-cta-button final-cta-button open-registration-modal group inline-flex items-center justify-center px-8 sm:px-12 py-5 sm:py-6 text-lg sm:text-xl lg:text-2xl font-black text-white bg-gradient-to-r from-emerald-600 to-emerald-700 rounded-2xl hover:from-emerald-700 hover:to-emerald-800 focus:outline-none focus:ring-4 focus:ring-emerald-300 transition-all duration-300 shadow-2xl hover:shadow-emerald-500/50 hover:-translate-y-2 transform cursor-pointer"
 			>
-				<svg class="w-6 h-6 sm:w-7 sm:h-7 mr-3 group-hover:animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-				</svg>
-				KLIK DISINI UNTUK MENDAFTAR!
+				Daftar Gratis Sekarang!
 			</button>
 			
 			<!-- Additional CTAs -->
@@ -145,19 +141,19 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-	// Track AddPaymentInfo event for main CTA button
-	const mainCtaButton = document.getElementById('openRegistrationModal');
+	// Track AddToCart event for main CTA button
+	const mainCtaButton = document.querySelector('.final-cta-button');
 	if (mainCtaButton) {
 		mainCtaButton.addEventListener('click', function() {
-			// Track AddPaymentInfo event when main CTA button is clicked
+			// Track AddToCart event when main CTA button is clicked
 			if (typeof (window as any).fbq !== 'undefined') {
-				(window as any).fbq('track', 'AddPaymentInfo', {
-					content_name: 'KLIK DISINI UNTUK MENDAFTAR!',
+				(window as any).fbq('track', 'AddToCart', {
+					content_name: 'Daftar Gratis Sekarang!',
 					content_category: 'Main CTA Button',
 					value: 0.00,
 					currency: 'IDR'
 				});
-				console.log('Meta Pixel: AddPaymentInfo event tracked - Main CTA button "KLIK DISINI UNTUK MENDAFTAR!"');
+				console.log('Meta Pixel: AddToCart event tracked - Main CTA button "Daftar Gratis Sekarang!"');
 			}
 		});
 	}

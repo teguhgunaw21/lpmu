@@ -149,15 +149,11 @@
 
 		<!-- Next Section Navigation -->
 		<div class="text-center mt-16 animate-fadeInUp delay-700">
-			<a href="#why-umrah" class="material-nav-button group inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white bg-gradient-to-r from-purple-600 to-purple-700 rounded-xl hover:from-purple-700 hover:to-purple-800 focus:outline-none focus:ring-4 focus:ring-purple-300 transition-all duration-300 shadow-lg hover:shadow-purple-500/25 hover:-translate-y-1 transform">
-				<svg class="w-6 h-6 mr-3 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-				</svg>
-				KENAPA HARUS PRODUK UMROH?
-				<svg class="w-5 h-5 ml-3 group-hover:translate-y-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7"/>
-				</svg>
-			</a>
+			<button 
+				class="material-nav-button open-registration-modal group inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white bg-gradient-to-r from-emerald-600 to-emerald-700 rounded-xl hover:from-emerald-700 hover:to-emerald-800 focus:outline-none focus:ring-4 focus:ring-emerald-300 transition-all duration-300 shadow-lg hover:shadow-emerald-500/25 hover:-translate-y-1 transform"
+			>
+				Daftar Gratis Sekarang!
+			</button>
 		</div>
 
 	</div>
@@ -171,7 +167,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		materialNavButton.addEventListener('click', function() {
 			if (typeof (window as any).fbq !== 'undefined') {
 				(window as any).fbq('track', 'AddToCart', {
-					content_name: 'KENAPA HARUS PRODUK UMROH?',
+					content_name: 'Daftar Gratis Sekarang!',
 					content_category: 'Navigation Button - Material'
 				});
 				console.log('Meta Pixel: AddToCart event tracked - Material navigation button');

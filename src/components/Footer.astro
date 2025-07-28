@@ -18,18 +18,10 @@
 				<!-- Logo -->
 				<div class="flex items-center space-x-3 mb-6">
 					<img 
-						src="/logo-umroh.png" 
+						src="/logo-mu.webp" 
 						alt="Mentoring Umroh Logo" 
-						class="w-12 h-12 rounded-full object-cover border-2 border-emerald-400"
-						onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+						class="h-8 w-auto"
 					/>
-					<div class="w-12 h-12 bg-gradient-to-r from-emerald-400 to-emerald-500 rounded-full flex items-center justify-center font-bold text-xl text-slate-900" style="display: none;">
-						MU
-					</div>
-					<div>
-						<h3 class="text-2xl font-bold text-white">Mentoring Umroh</h3>
-						<p class="text-emerald-300 text-sm">Digital Marketing for Umroh</p>
-					</div>
 				</div>
 
 				<!-- Description -->
@@ -167,15 +159,11 @@
 
 				<!-- CTA Button -->
 				<div class="mt-8">
-					<a 
-						href="#final-cta"
-						class="footer-cta-button inline-flex items-center justify-center px-6 py-3 text-base font-bold text-slate-900 bg-gradient-to-r from-emerald-400 to-emerald-500 rounded-xl hover:from-emerald-500 hover:to-emerald-600 focus:outline-none focus:ring-4 focus:ring-emerald-300 transition-all duration-300 shadow-lg hover:shadow-emerald-500/25 hover:-translate-y-1 transform"
+					<button 
+						class="footer-cta-button open-registration-modal inline-flex items-center justify-center px-6 py-3 text-base font-bold text-white bg-gradient-to-r from-emerald-600 to-emerald-700 rounded-xl hover:from-emerald-700 hover:to-emerald-800 focus:outline-none focus:ring-4 focus:ring-emerald-300 transition-all duration-300 shadow-lg hover:shadow-emerald-500/25 hover:-translate-y-1 transform"
 					>
-						<svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-						</svg>
-						DAFTAR GRATIS
-					</a>
+						Daftar Gratis Sekarang!
+					</button>
 				</div>
 			</div>
 
@@ -241,7 +229,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		footerCtaButton.addEventListener('click', function() {
 			if (typeof (window as any).fbq !== 'undefined') {
 				(window as any).fbq('track', 'AddToCart', {
-					content_name: 'DAFTAR GRATIS',
+					content_name: 'Daftar Gratis Sekarang!',
 					content_category: 'Footer CTA Button'
 				});
 				console.log('Meta Pixel: AddToCart event tracked - Footer CTA button');

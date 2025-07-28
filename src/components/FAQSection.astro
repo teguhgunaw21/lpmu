@@ -34,17 +34,14 @@
 							Saya Mau Daftar, Gimana Caranya ?
 						</h3>
 						<p class="text-base sm:text-lg text-slate-700 leading-relaxed mb-4">
-							Silahkan klik tombol <span class="font-bold text-emerald-600">Daftar Sekarang</span> yang ada di halaman ini, maka Anda akan diarahkan ke form pendaftaran.
+							Silahkan klik tombol <span class="font-bold text-emerald-600">Daftar Gratis Sekarang!</span> yang ada di halaman ini, maka Anda akan diarahkan ke form pendaftaran.
 						</p>
-						<a 
-							href="#final-cta"
-							class="inline-flex items-center px-6 py-3 text-base font-semibold text-white bg-gradient-to-r from-emerald-500 to-emerald-600 rounded-xl hover:from-emerald-600 hover:to-emerald-700 focus:outline-none focus:ring-2 focus:ring-emerald-300 transition-all duration-200 shadow-md hover:shadow-lg hover:-translate-y-1"
+						<button 
+							id="faq1-registration-button"
+							class="faq-nav-button open-registration-modal inline-flex items-center px-6 py-3 text-base font-semibold text-white bg-gradient-to-r from-emerald-500 to-emerald-600 rounded-xl hover:from-emerald-600 hover:to-emerald-700 focus:outline-none focus:ring-2 focus:ring-emerald-300 transition-all duration-200 shadow-md hover:shadow-lg hover:-translate-y-1 relative z-10"
 						>
-							<svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-							</svg>
-							DAFTAR DISINI
-						</a>
+							Daftar Gratis Sekarang!
+						</button>
 					</div>
 				</div>
 			</div>
@@ -155,15 +152,11 @@
 				<p class="text-base sm:text-lg text-slate-600 leading-relaxed mb-6">
 					Jangan khawatir! Setelah daftar, Anda akan bergabung dengan grup WhatsApp khusus peserta dimana bisa bertanya langsung.
 				</p>
-				<a href="#final-cta" class="faq-nav-button group inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white bg-gradient-to-r from-emerald-600 to-emerald-700 rounded-xl hover:from-emerald-700 hover:to-emerald-800 focus:outline-none focus:ring-4 focus:ring-emerald-300 transition-all duration-300 shadow-lg hover:shadow-emerald-500/25 hover:-translate-y-1 transform">
-					<svg class="w-6 h-6 mr-3 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-					</svg>
-					SUDAH PAHAM? DAFTAR SEKARANG!
-					<svg class="w-5 h-5 ml-3 group-hover:translate-y-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7"/>
-					</svg>
-				</a>
+				<button 
+					class="faq-nav-button open-registration-modal group inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white bg-gradient-to-r from-emerald-600 to-emerald-700 rounded-xl hover:from-emerald-700 hover:to-emerald-800 focus:outline-none focus:ring-4 focus:ring-emerald-300 transition-all duration-300 shadow-lg hover:shadow-emerald-500/25 hover:-translate-y-1 transform relative z-10"
+				>
+					Daftar Gratis Sekarang!
+				</button>
 			</div>
 		</div>
 
@@ -180,19 +173,44 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-	// Track AddToCart event for FAQ navigation button
-	const faqNavButton = document.querySelector('.faq-nav-button');
-	if (faqNavButton) {
-		faqNavButton.addEventListener('click', function() {
+	// Simple and reliable event delegation for all registration buttons
+	document.addEventListener('click', function(e) {
+		const target = e.target as HTMLElement;
+		
+		// Check if clicked element or its parent has the registration class
+		if (target && (target.classList.contains('open-registration-modal') || 
+					   target.closest('.open-registration-modal'))) {
+			e.preventDefault();
+			e.stopPropagation();
+			
+			console.log('Registration button clicked!');
+			
+			// Track Meta Pixel event
 			if (typeof (window as any).fbq !== 'undefined') {
 				(window as any).fbq('track', 'AddToCart', {
-					content_name: 'SUDAH PAHAM? DAFTAR SEKARANG!',
+					content_name: 'Daftar Gratis Sekarang!',
 					content_category: 'Navigation Button - FAQ'
 				});
 				console.log('Meta Pixel: AddToCart event tracked - FAQ navigation button');
 			}
-		});
-	}
+			
+			// Open modal
+			const modal = document.getElementById('registrationModal');
+			if (modal) {
+				modal.classList.remove('hidden');
+				modal.classList.add('flex');
+				
+				// Animate modal appearance
+				setTimeout(() => {
+					const modalContent = modal.querySelector('.modal-content');
+					if (modalContent) {
+						modalContent.classList.remove('scale-95', 'opacity-0');
+						modalContent.classList.add('scale-100', 'opacity-100');
+					}
+				}, 10);
+			}
+		}
+	});
 });
 </script>
 

@@ -187,15 +187,11 @@
 
 		<!-- Next Section Navigation -->
 		<div class="text-center mt-16 animate-fadeInUp delay-800">
-			<a href="#target-audience" class="testimoni-nav-button group inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white bg-gradient-to-r from-indigo-600 to-indigo-700 rounded-xl hover:from-indigo-700 hover:to-indigo-800 focus:outline-none focus:ring-4 focus:ring-indigo-300 transition-all duration-300 shadow-lg hover:shadow-indigo-500/25 hover:-translate-y-1 transform">
-				<svg class="w-6 h-6 mr-3 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
-				</svg>
-				CEK APAKAH COCOK UNTUK ANDA
-				<svg class="w-5 h-5 ml-3 group-hover:translate-y-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7"/>
-				</svg>
-			</a>
+			<button 
+				class="testimoni-nav-button open-registration-modal group inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white bg-gradient-to-r from-emerald-600 to-emerald-700 rounded-xl hover:from-emerald-700 hover:to-emerald-800 focus:outline-none focus:ring-4 focus:ring-emerald-300 transition-all duration-300 shadow-lg hover:shadow-emerald-500/25 hover:-translate-y-1 transform"
+			>
+				Daftar Gratis Sekarang!
+			</button>
 		</div>
 
 	</div>
@@ -347,7 +343,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		testimoniNavButton.addEventListener('click', function() {
 			if (typeof (window as any).fbq !== 'undefined') {
 				(window as any).fbq('track', 'AddToCart', {
-					content_name: 'CEK APAKAH COCOK UNTUK ANDA',
+					content_name: 'Daftar Gratis Sekarang!',
 					content_category: 'Navigation Button - Testimoni'
 				});
 				console.log('Meta Pixel: AddToCart event tracked - Testimoni navigation button');
