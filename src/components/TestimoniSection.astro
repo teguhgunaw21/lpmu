@@ -2,6 +2,30 @@
 // TestimoniSection.astro - Testimonial carousel section for Mentoring Umroh
 ---
 
+<style>
+	/* Ensure smooth scrolling and prevent interference */
+	.testimonial-carousel {
+		overscroll-behavior: contain;
+		touch-action: pan-y pinch-zoom;
+	}
+	
+	.testimonial-track {
+		overscroll-behavior: contain;
+		touch-action: pan-y pinch-zoom;
+	}
+	
+	/* Improve touch responsiveness */
+	.testimonial-slide {
+		touch-action: pan-y pinch-zoom;
+	}
+	
+	/* Ensure navigation buttons don't interfere with scroll */
+	.carousel-prev,
+	.carousel-next {
+		touch-action: manipulation;
+	}
+</style>
+
 <section id="testimoni" class="bg-gradient-to-br from-slate-50 via-emerald-50 to-slate-100 py-16 sm:py-20">
 	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 		
@@ -273,35 +297,66 @@ document.addEventListener('DOMContentLoaded', function() {
 	prevBtn?.addEventListener('click', prevSlide);
 	nextBtn?.addEventListener('click', nextSlide);
 	
-	// Touch/swipe support
+	// Touch/swipe support with improved scroll handling
 	let startX = 0;
+	let startY = 0;
 	let isDragging = false;
+	let isHorizontalSwipe = false;
+	let hasMoved = false;
 	
 	track?.addEventListener('touchstart', (e: TouchEvent) => {
 		startX = e.touches[0].clientX;
+		startY = e.touches[0].clientY;
 		isDragging = true;
-	});
+		isHorizontalSwipe = false;
+		hasMoved = false;
+	}, { passive: true });
 	
 	track?.addEventListener('touchmove', (e: TouchEvent) => {
 		if (!isDragging) return;
-		e.preventDefault();
-	});
+		
+		const currentX = e.touches[0].clientX;
+		const currentY = e.touches[0].clientY;
+		const diffX = Math.abs(currentX - startX);
+		const diffY = Math.abs(currentY - startY);
+		
+		// Only start tracking as horizontal swipe after some movement
+		if (!hasMoved && (diffX > 5 || diffY > 5)) {
+			hasMoved = true;
+		}
+		
+		// Determine if this is a horizontal swipe (more horizontal than vertical movement)
+		if (hasMoved && !isHorizontalSwipe && diffX > 10 && diffX > diffY * 1.5) {
+			isHorizontalSwipe = true;
+		}
+		
+		// Only prevent default if it's clearly a horizontal swipe with sufficient movement
+		if (isHorizontalSwipe && diffX > 30) {
+			e.preventDefault();
+		}
+	}, { passive: false });
 	
 	track?.addEventListener('touchend', (e: TouchEvent) => {
 		if (!isDragging) return;
 		isDragging = false;
 		
 		const endX = e.changedTouches[0].clientX;
-		const diff = startX - endX;
+		const endY = e.changedTouches[0].clientY;
+		const diffX = startX - endX;
+		const diffY = Math.abs(endY - startY);
 		
-		if (Math.abs(diff) > 50) { // Minimum swipe distance
-			if (diff > 0) {
+		// Only handle as swipe if it's clearly horizontal and has sufficient distance
+		if (isHorizontalSwipe && Math.abs(diffX) > 60 && Math.abs(diffX) > diffY * 1.5) {
+			if (diffX > 0) {
 				nextSlide();
 			} else {
 				prevSlide();
 			}
 		}
-	});
+		
+		isHorizontalSwipe = false;
+		hasMoved = false;
+	}, { passive: true });
 	
 	// Auto-play
 	function startAutoplay() {
